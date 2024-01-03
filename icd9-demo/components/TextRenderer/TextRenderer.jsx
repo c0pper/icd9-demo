@@ -28,9 +28,10 @@ const TextRenderer = () => {
                     (
                         <>
                             {platformOutput.document.content.slice(0, highlightIndexes.start)}
+
                             <HoverCard>
                                 <HoverCardTrigger asChild>
-                                    <span className="highlighted-text">
+                                    <span className={matchingItem.hierarchy.includes("ICD9CM") ? "highlighted-text-diagnosis" : "highlighted-text-procedure"}>
                                         {platformOutput.document.content.slice(highlightIndexes.start, highlightIndexes.end + 1)}
                                     </span>
                                 </HoverCardTrigger>
@@ -66,6 +67,7 @@ const TextRenderer = () => {
                                 </div>
                                 </HoverCardContent>
                             </HoverCard>
+
                             {platformOutput.document.content.slice(highlightIndexes.end + 1)}
                         </>
                     )

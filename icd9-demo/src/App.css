@@ -16,8 +16,12 @@ button {
   @apply p-6 justify-start;
 }
 
-.highlighted-text {
-  @apply bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white rounded-lg p-0.5 cursor-pointer;
+.highlighted-text-diagnosis {
+  @apply bg-[#ff8b94] text-white rounded-lg p-0.5 cursor-pointer;
+}
+
+.highlighted-text-procedure {
+  @apply bg-[#68c4af] text-white rounded-lg p-0.5 cursor-pointer;
 }
 /*
 .logo {

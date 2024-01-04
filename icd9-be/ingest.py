@@ -148,8 +148,7 @@ if __name__ == "__main__":
     full_processed = process_platform_output(platform_out)
     retriever = get_retriever(full_processed)
     # response = gpt.ask_chatGPT(retriever, domanda)
-    response = gpt.ask_ELMI(retriever, domanda)
-    jj = jsonify(response)
+    response = gpt.ask_ELMI(retriever, domanda, k=10)
 
 
     # print(response.choices[0].message.content)

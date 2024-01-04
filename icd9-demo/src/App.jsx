@@ -48,7 +48,6 @@ function App() {
                     <Topics />
                   </TabsContent>
                 </Tabs>
-                <hr />
                 <QuestionArea />
               </div>
               <div className='flex-1 main-areas'>

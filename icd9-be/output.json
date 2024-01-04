@@ -3464,32 +3464,32 @@
         "value": "trauma cranico"
       }
     ],
-    "mainSentences": [
-      {
-        "end": 14119,
-        "score": 1.7,
-        "start": 14020,
-        "value": "Durante la degenza post-operatoria, la paziente ha eseguito i seguenti accertamenti pre-dimissione:"
-      },
-      {
-        "end": 6749,
-        "score": 1.6,
-        "start": 6674,
-        "value": "Durante la degenza la paziente è stata sottoposta ai seguenti accertamenti:"
-      },
-      {
-        "end": 10891,
-        "score": 1.39,
-        "start": 10789,
-        "value": "In data ********** la paziente viene quindi sottoposta ad intervento chirurgico di: 'Endoarteriectomia"
-      },
-      {
-        "end": 3863,
-        "score": 1.29,
-        "start": 3754,
-        "value": "trasferita presso il reparto di Neurologia dell'Ospedale di Voghera dove esegue controlli seriati TC encefalo"
-      }
-    ],
+		"mainSentences": [
+			{
+				"end": 1091,
+				"score": 4.59,
+				"start": 949,
+				"value": "La paziente è giunta presso il nostro Centro per stabilire l'eventuale eleggibilità a intervento chirurgico di: \"Endoarteriectomia polmonare\"."
+			},
+			{
+				"end": 948,
+				"score": 3.2,
+				"start": 0,
+				"value": "Struttura Complessa di Cardiochirurgia Primario: Dottore: ****************** Lettera di Trasferimento Ospedaliero **** ******* **** * ******** *** **** ************** * ******* ******** * ******* **** ********** **** * ******* **** *** **** * ******* Paziente: ******* ******* Data di nascita: ********** Residente a: VOGHERA Codice Fiscale: **************** Tessera Sanitaria: ******** Nosologico: 32062668 Pavia, ********** Alla c.a. Dottore: ********, Dottoressa: *********, U.O. di Pneumologia Riabilitativa, I.R.C.C.S. Fondazione \"Salvatore Maugeri\", Centro Medico di Montescano (PV) e p.c. Dottore: ********, Dottore: ++++, U.O. di Cardiologia, Ospedale di Voghera, Voghera (PV) Medico di Medicina Generale, Voghera (PV) Si trasferisce in data odierna la Sig.ra +++++++ *******, di anni 79, ricoverata presso il nostro Centro in regime ordinario dal giorno ********** con diagnosi di: \"Sospetta ipertensione polmonare cronica tromboembolica\"."
+			},
+			{
+				"end": 14223,
+				"score": 3.09,
+				"start": 14019,
+				"value": "Durante la degenza post-operatoria, la paziente ha eseguito i seguenti accertamenti pre-dimissione: Esami ematochimici (**********) (in grassetto fuori range) GB 9.51, GR 3.20, Hgb 9.7, Hct 31.3, Plt 243."
+			},
+			{
+				"end": 4640,
+				"score": 2.4,
+				"start": 4442,
+				"value": "In tale sede viene sottoposta a controlli seriati TC encefalo risultati sovrapponibili al precedente esame se non per comparsa di aree iperdense, possibile espressione di microsanguinamento in atto."
+			}
+		],
     "mainSyncons": [
       {
         "lemma": "paziente",

@@ -244,7 +244,6 @@ const QuestionArea = () => {
               </Button>
             </div>
           </div>
-          <hr />
         </div>
         : undefined
         }

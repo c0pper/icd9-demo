@@ -15,44 +15,64 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/components/ui/tabs"
+import Timeline from '@/components/Timeline/Timeline';
 
 
 function App() {
   const processedPlatformOutput = useSelector((state) => state.processedPlatformOutput.value)
 
-
   return (
     <>
       <div>
         <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
-          <div className=' absolute top-4 right-4'>
+          <div className=' fixed bottom-4 right-4'>
             <ModeToggle />
           </div>
           {
             processedPlatformOutput != null ? (
-            <div className='grid grid-cols-2 gap-4'>
-              <div className='flex-1 main-areas'>
-                <Tabs defaultValue="icd9-concepts" className="w-auto">
-                  <TabsList className="grid w-full grid-cols-3">
-                    <TabsTrigger value="icd9-concepts">ICD9 Concepts</TabsTrigger>
-                    <TabsTrigger value="main-sentences">Main Sentences</TabsTrigger>
-                    <TabsTrigger value="topics">Topics</TabsTrigger>
-                  </TabsList>
-                  <TabsContent value="icd9-concepts">
-                    <EntitiesDisplay processedPlatformOutput={processedPlatformOutput} />
-                  </TabsContent>
-                  <TabsContent value="main-sentences">
-                    <MainSentences />
-                  </TabsContent>
-                  <TabsContent value="topics">
-                    <Topics />
-                  </TabsContent>
-                </Tabs>
-                <QuestionArea />
-              </div>
-              <div className='flex-1 main-areas'>
-                <TextRenderer />
-              </div>
+            <div>
+              <Tabs defaultValue="overview" className="w-auto">
+                <TabsList className="grid w-full grid-cols-2">
+                  <TabsTrigger value="overview">Overview</TabsTrigger>
+                  <TabsTrigger value="timeline">Timeline</TabsTrigger>
+                </TabsList>
+                <TabsContent value="overview">
+                  <div className='grid grid-cols-2 gap-4'>
+                    <div className='flex-1 main-areas'>
+                      <Tabs defaultValue="icd9-concepts" className="w-auto">
+                        <TabsList className="grid w-full grid-cols-3">
+                          <TabsTrigger value="icd9-concepts">ICD9 Concepts</TabsTrigger>
+                          <TabsTrigger value="main-sentences">Main Sentences</TabsTrigger>
+                          <TabsTrigger value="topics">Topics</TabsTrigger>
+                        </TabsList>
+                        <TabsContent value="icd9-concepts">
+                          <EntitiesDisplay processedPlatformOutput={processedPlatformOutput} />
+                        </TabsContent>
+                        <TabsContent value="main-sentences">
+                          <MainSentences />
+                        </TabsContent>
+                        <TabsContent value="topics">
+                          <Topics />
+                        </TabsContent>
+                      </Tabs>
+                      <QuestionArea />
+                    </div>
+                    <div className='flex-1 main-areas'>
+                      <TextRenderer />
+                    </div>
+                  </div>
+                </TabsContent>
+
+                <TabsContent value="timeline" className="">
+                  <div className=' grid grid-cols-12'>
+                    <div className=' col-span-12  col-start-2 col-end-12'>
+                      <Timeline />
+
+                    </div>
+
+                  </div>
+                </TabsContent>
+              </Tabs>
             </div>
             )
             :

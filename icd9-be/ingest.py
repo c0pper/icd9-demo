@@ -2,11 +2,90 @@ import json
 import gpt
 import vecstore
 from utils import calculate_md5, min_max_scaling
-from flask import jsonify
 
 
-with open('output.json', 'r', encoding="UTF8") as file:
-    platform_out = json.load(file)
+def enrich_paragraph_or_sentence(token, platform_out, type_of_text: str):
+    text = platform_out["content"]
+    if type_of_text == "paragraph":
+        paragraphs = platform_out["paragraphs"]
+        
+        #Individuazione paragraph
+        paragraph_idx = token["paragraph"]
+        paragraph_start = paragraphs[paragraph_idx]["start"]
+        paragraph_end = paragraphs[paragraph_idx]["end"]
+        paragraph = text[paragraph_start:paragraph_end]
+
+        # Arricchimento paragraph con testo precedente fino al punto/accapo
+        prev_text_reversed = []
+        reversed_prev_text_full = list(reversed(text[:paragraph_start]))
+        for idx, char in enumerate(reversed_prev_text_full):
+            two_chars = reversed_prev_text_full[idx] + reversed_prev_text_full[idx+1] 
+            if not two_chars in [" .", "\n.", "\n\n"]:
+                prev_text_reversed.append(char)
+            else:
+                break
+        prev_text = "".join(reversed(prev_text_reversed))
+        paragraph = prev_text + paragraph
+
+        # Arricchimento paragraph con testo successivo fino al punto/accapo
+        next_text = []
+        next_text_full = text[paragraph_end:]
+        for idx, char in enumerate(next_text_full):
+            two_chars = next_text_full[idx] + next_text_full[idx+1]
+            if not two_chars in [". ", ".\n", "\n\n"]:
+                next_text.append(char)
+            else:
+                break
+        next_text = "".join(next_text)
+        paragraph = paragraph + next_text + "."
+
+        enriched_paragraph_start = text.find(paragraph)
+        enriched_paragraph_end = enriched_paragraph_start + len(paragraph)
+
+        return paragraph, enriched_paragraph_start, enriched_paragraph_end
+    
+    
+    if type_of_text == "sentence":
+        sentences = platform_out["sentences"]
+        
+        #Individuazione paragraph
+        sentence_idx = token["sentence"]
+        sentence_start = sentences[sentence_idx]["start"]
+        sentence_end = sentences[sentence_idx]["end"]
+        sentence = text[sentence_start:sentence_end]
+
+        # Arricchimento paragraph con testo precedente fino al punto/accapo
+        prev_text_reversed = []
+        reversed_prev_text_full = list(reversed(text[:sentence_start]))
+        for idx, char in enumerate(reversed_prev_text_full):
+            two_chars = reversed_prev_text_full[idx] + reversed_prev_text_full[idx+1] 
+            if not two_chars in [" .", "\n.", "\n\n"]:
+                prev_text_reversed.append(char)
+            else:
+                break
+        prev_text = "".join(reversed(prev_text_reversed))
+        sentence = prev_text + sentence
+
+        # Arricchimento paragraph con testo successivo fino al punto/accapo
+        next_text = []
+        next_text_full = text[sentence_end:]
+        for idx, char in enumerate(next_text_full):
+            try:
+                two_chars = next_text_full[idx] + next_text_full[idx+1]
+            except IndexError:
+                two_chars = next_text_full[idx]
+            if not two_chars in [". ", ".\n", "\n\n"]:
+                next_text.append(char)
+            else:
+                break
+        next_text = "".join(next_text)
+        sentence = sentence + next_text + "."
+
+        enriched_sentence_start = text.find(sentence)
+        enriched_sentence_end = enriched_sentence_start + len(sentence)
+
+        return sentence, enriched_sentence_start, enriched_sentence_end
+
 
 def process_platform_output(platform_out):
     platform_out = platform_out["document"]
@@ -64,48 +143,68 @@ def process_platform_output(platform_out):
 
             positions = extraction["fields"][0]["positions"]
             extraction_paragraphs = []
-            for p in positions:
+            extraction_sentences = []
+            for pos in positions:
                 for t in tokens:
-                    if p["start"] == t["start"]:
-                        
-                        paragraph_idx = t["paragraph"]
-                        paragraph_start = paragraphs[paragraph_idx]["start"]
-                        paragraph_end = paragraphs[paragraph_idx]["end"]
-                        paragraph = text[paragraph_start:paragraph_end]
+                    if pos["start"] == t["start"]:
+                        if len(paragraphs) > 1:
+                            paragraph, paragraph_start, paragraph_end = enrich_paragraph_or_sentence(t, platform_out, "paragraph")
+                            extraction_paragraphs.append(paragraph)
+                        else:
+                            sentence, sentence_start, sentence_end = enrich_paragraph_or_sentence(t, platform_out, "sentence")
+                            extraction_sentences.append(sentence)
+                        # #Individuazione paragraph
+                        # paragraph_idx = t["paragraph"]
+                        # paragraph_start = paragraphs[paragraph_idx]["start"]
+                        # paragraph_end = paragraphs[paragraph_idx]["end"]
+                        # paragraph = text[paragraph_start:paragraph_end]
 
-                        # Arricchimento paragraph con testo precedente fino al punto/accapo
-                        prev_text_reversed = []
-                        reversed_prev_text_full = list(reversed(text[:paragraph_start]))
-                        for idx, char in enumerate(reversed_prev_text_full):
-                            two_chars = reversed_prev_text_full[idx] + reversed_prev_text_full[idx+1] 
-                            if not two_chars in [" .", "\n.", "\n\n"]:
-                                prev_text_reversed.append(char)
-                            else:
-                                break
-                        prev_text = "".join(reversed(prev_text_reversed))
-                        paragraph = prev_text + paragraph
+                        # # Arricchimento paragraph con testo precedente fino al punto/accapo
+                        # prev_text_reversed = []
+                        # reversed_prev_text_full = list(reversed(text[:paragraph_start]))
+                        # for idx, char in enumerate(reversed_prev_text_full):
+                        #     two_chars = reversed_prev_text_full[idx] + reversed_prev_text_full[idx+1] 
+                        #     if not two_chars in [" .", "\n.", "\n\n"]:
+                        #         prev_text_reversed.append(char)
+                        #     else:
+                        #         break
+                        # prev_text = "".join(reversed(prev_text_reversed))
+                        # paragraph = prev_text + paragraph
 
-                        # Arricchimento paragraph con testo successivo fino al punto/accapo
-                        next_text = []
-                        next_text_full = text[paragraph_end:]
-                        for idx, char in enumerate(next_text_full):
-                            two_chars = next_text_full[idx] + next_text_full[idx+1]
-                            if not two_chars in [". ", ".\n", "\n\n"]:
-                                next_text.append(char)
-                            else:
-                                break
-                        next_text = "".join(next_text)
-                        paragraph = paragraph + next_text + "."
-                        extraction_paragraphs.append(paragraph)
-                       
-            data_point = {
-                    "icd9": icd9code,
-                    "hierarchy": hierarchy,
-                    "extract": "\n".join(extraction_paragraphs),
-                    "paragraph_start": paragraph_start,
-                    "paragraph_end": paragraph_end,
-                    "label": label
-                }
+                        # # Arricchimento paragraph con testo successivo fino al punto/accapo
+                        # next_text = []
+                        # next_text_full = text[paragraph_end:]
+                        # for idx, char in enumerate(next_text_full):
+                        #     try:
+                        #         two_chars = next_text_full[idx] + next_text_full[idx+1]
+                        #     except IndexError:
+                        #         two_chars = next_text_full[idx]
+                        #     if not two_chars in [". ", ".\n", "\n\n"]:
+                        #         next_text.append(char)
+                        #     else:
+                        #         break
+                        # next_text = "".join(next_text)
+                        # paragraph = paragraph + next_text + "."
+            
+            if len(paragraphs) > 1:
+                data_point = {
+                        "icd9": icd9code,
+                        "hierarchy": hierarchy,
+                        "extract": "\n".join(extraction_paragraphs),
+                        "extract_start": paragraph_start,
+                        "extract_end": paragraph_end,
+                        "label": label
+                    }
+            elif len(paragraphs) <= 1:
+                data_point = {
+                        "icd9": icd9code,
+                        "hierarchy": hierarchy,
+                        "extract": "\n".join(extraction_sentences),
+                        "extract_start": sentence_start,
+                        "extract_end": sentence_end,
+                        "label": label
+                    }
+
             if patient_data_for_vectorstore:
                 if data_point["extract"] not in [i["extract"] for i in patient_data_for_vectorstore]:
                     patient_data_for_vectorstore.append(data_point)
@@ -117,7 +216,7 @@ def process_platform_output(platform_out):
         else:
             print(f"Concept {concept_value} not found in extradata")
 
-    patient_data_full = sorted(patient_data_full, key=lambda x: x["paragraph_start"])
+    patient_data_full = sorted(patient_data_full, key=lambda x: x["extract_start"])
     md5 = calculate_md5(text)
 
     full_processed = {
@@ -144,13 +243,18 @@ def get_retriever(full_processed_platform_out):
 
 if __name__ == "__main__":
     
-    domanda = "Quali interventi chirurgici ha subito questo paziente?"
-    full_processed = process_platform_output(platform_out)
-    retriever = get_retriever(full_processed)
-    # response = gpt.ask_chatGPT(retriever, domanda)
-    response = gpt.ask_ELMI(retriever, domanda, k=10)
+    # domanda = "Quali interventi chirurgici ha subito questo paziente?"
+    # full_processed = process_platform_output(platform_out)
+    # retriever = get_retriever(full_processed)
+    # # response = gpt.ask_chatGPT(retriever, domanda)
+    # response = gpt.ask_ELMI(retriever, domanda, k=10)
 
 
     # print(response.choices[0].message.content)
-    print(response["content"])
+    # print(response["content"])
+
+    # with open('../icd9-demo/dummy-output-farmaci.json', 'r', encoding="UTF8") as file:
+    with open('output.json', 'r', encoding="UTF8") as file:
+        platform_out = json.load(file)
+    process_platform_output(platform_out)
 

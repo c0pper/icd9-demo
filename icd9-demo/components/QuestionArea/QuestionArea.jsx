@@ -2,16 +2,9 @@ import { useState, useEffect } from 'react'
 import 'regenerator-runtime/runtime'
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
-import { useToast } from "@/components/ui/use-toast"
 import { useSelector, useDispatch } from 'react-redux'
 import { setGenerativeAnswer } from '@slices/generative-answer/generativeAnswerSlice';
 import axios from 'axios'
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion"
 import {
   Select,
   SelectContent,
@@ -51,7 +44,6 @@ import { SayButton } from 'react-say';
 
 
 const QuestionArea = () => {
-    const { toast } = useToast()
     const dispatch = useDispatch()
     const processedPlatformOutput = useSelector((state) => state.processedPlatformOutput.value)
     const [question, setQuestion] = useState("")

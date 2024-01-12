@@ -1,6 +1,9 @@
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import hashlib
+import re
+import random
+from datetime import datetime, timedelta
 
 
 def get_cosine_similarities(question: str, texts: list):
@@ -41,3 +44,16 @@ def calculate_md5(input_string):
 
 def min_max_scaling(value, min_value, max_value, new_min, new_max):
     return ((value - min_value) / (max_value - min_value)) * (new_max - new_min) + new_min
+
+
+
+# Funzione per generare una data casuale nel formato gg/mm/aaaa
+def generate_random_date():
+    start_date = datetime(2000, 1, 1)
+    end_date = datetime(2024, 1, 1)
+    random_date = start_date + timedelta(days=random.randint(0, (end_date - start_date).days))
+    return random_date.strftime("%d/%m/%Y")
+
+# Funzione per sostituire la stringa con la data random
+def replace_date(match):
+    return f'n data {generate_random_date()}'

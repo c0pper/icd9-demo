@@ -1,0 +1,248 @@
+{
+    "text": "Lettera di Dimissione del ***** Ai Colleghi della Casa di cura *** di **** e P.C. Egregio Collega, dott. ***** Oggi dimettiamo il Suo paziente Sig......di anni 83 - sesso maschile nato il **** ricoverato qui dal **** al **** per giorni 16. Questo ricovero \u00e8 stato MOTIVATO da: Riacutizzazione bronchitica e fibrillazione atriale Gli accertamenti effettuati hanno permesso di concludere per la seguente diagnosi: INSUFFICIENZA RESPIRATORIA ACUTA E SCOMPENSO CARDIACO IN CARDIOPATIA IPERTENSIVA AD EVOLUZIONE DILATATIVA CON FUNZIONE SISTOLICA SEVERAMENTE DEPRESSA E RIACUTIZZAZIONE BRONCHITICA IN BPCO. EPISODIO DI FIBRILLAZIONE ATRIALE PAROSSISTICA REGREDITO SPONTANEAMENTE. DIABETE MELLITO DI TIPO II. ESITI DI PREGRESSO INTERVENTO CHIRURGICO PER CARCINOMA DELLA LINGUA. Evoluzione clinica e terapie effettuate: durante la degenza impostata terapia antibiotica da prima terapia con ceftriaxone e levofloxacina con scarso beneficio clinico; successivamente sostituita da piperacillina tazobactam con buona risposta terapeutica; durante la degenza \u00e8 stato inoltre trattato con furosemide per via ev; ed \u00e8 stato sottoposto a FKT respiratoria per la presenza di importanti quantit\u00e0 di secreto bronchiale. Esami effettuati:Leucociti 13,7--> 8.5 x10^9/L 4.0 - 10.0, Emoglobina 10.7 g/dL 13.5 - 18.0, Ematocrito 33.7 % 40.0 - 52.0, MCV 114.2 fL 79.0 - 96.0, Piastrine 374 x10^9/L 150 - 400, Proteina C reattiva 190--> 39.20 mg/L < 6.00, Glucosio 83 mg/dL 70 - 99, Urea 71 mg/dL 10 - 50, Creatinina 1.3 mg/dL 0.6 - 1.4, Sodio 142 mEq/L 135 - 146, Potassio 4.5 mEq/L 3.5 - 5.3, Digoxina 1.1 ng/mL. rx torace: al controllo di data ***: Persiste diffuso e marcato ispessimento interstiziale peribroncovasale, con associate sfumate chiazzette di addensamento parenchimale bilateralmente, la maggiore in sede basale destra, cui si associa versamento pleurico basale bilaterale, di maggior entit\u00e0 a destra. Ombre ilari di aspetto congesto con rinforzo della trama vascolare. Ombra cardio-vascolare invariata. Invariato il resto. Ecocardiografia: eseguita in corso di FA con FC intorno a 140-150 bpm: ventricolo sinistro ai limiti dimensionali con lieve ipertrofia parietale e diffusa ipocinesia con FE severamente depressa; atriomegalia moderata bilaterale; aortosclerosi calcifica con gradienti conservati; fibrosclerosi mitralica con lieve reflusso; ventricolo destro nei limiti; non volume pericardico. ECG: all'ingresso fibrillazione atriale ad elevata risposta ventricolare. Blocco di branca sinistro. Ripristino del ritmo sinusale lo stesso giorno del ricovero si dimette in ritmo sinusale con buona risposta ventricolare. Condizioni del paziente alla dimissione: asintomatico, mobilizzato in poltrona, persiste necessit\u00e0 di ossigeno ad 1 litro/min con occhiali per qualche ora al giorno. Terapia consigliata: TAZOPENIL 4G+500MG 1FIN FIS 100 PER 3 8-16-24 (ANCORA PER 2 GIORNI) FUROSEMIDE 25 MG 2 CP PER 3 8-12-20 (DA SCALARE AL DOMICILIO ASSUMEVA 2 CP DIE) KANRENOL 100 1 CP ORE 16 (O SEC CALIEMIA) LANOXIN 0,125 1 CP ORE 12 KROVANEG 30 1 CP ORE 8 REPAGLINIDE 1 MG 1 CP PER DUE PRANZO E CENA CLEXANE 4.000 SC ORE 8 FINO A MOBILIZZAZIONE CLENIL 1 FL+BREVA 7 GOCCE PER 3 VOLTE DIE 8-16-22 BROMAZEPAM 10 GOCCE PER 2 8-20 TOPONITRO 15 1 CEROTTO 8-22 MOVICOL 1 BUSTINA SE STIPSI OMNIC 0,4 1 CP ALLA SERA Indicazioni di follow up:periodico controllo di glicemia, hb glicata, eletroliti e creatinina e digossinemia. Da segnalare una allergia alla frutta a guscio.\n",
+    "patient_data_full": [
+        {
+            "icd9": "427",
+            "hierarchy": "ICD9CM Taxonomy/aritmie cardiache",
+            "extract": "Questo ricovero \u00e8 stato MOTIVATO da: Riacutizzazione bronchitica e fibrillazione atriale Gli accertamenti effettuati hanno permesso di concludere per la seguente diagnosi: INSUFFICIENZA RESPIRATORIA ACUTA E SCOMPENSO CARDIACO IN CARDIOPATIA IPERTENSIVA AD EVOLUZIONE DILATATIVA CON FUNZIONE SISTOLICA SEVERAMENTE DEPRESSA E RIACUTIZZAZIONE BRONCHITICA IN BPCO. EPISODIO DI FIBRILLAZIONE ATRIALE PAROSSISTICA REGREDITO SPONTANEAMENTE.",
+            "extract_start": 240,
+            "extract_end": 673,
+            "label": "aritmie cardiache"
+        },
+        {
+            "icd9": "427.31",
+            "hierarchy": "ICD9CM Taxonomy/aritmie cardiache/fibrillazione e flutter atriali/fibrillazione atriale",
+            "extract": "Questo ricovero \u00e8 stato MOTIVATO da: Riacutizzazione bronchitica e fibrillazione atriale Gli accertamenti effettuati hanno permesso di concludere per la seguente diagnosi: INSUFFICIENZA RESPIRATORIA ACUTA E SCOMPENSO CARDIACO IN CARDIOPATIA IPERTENSIVA AD EVOLUZIONE DILATATIVA CON FUNZIONE SISTOLICA SEVERAMENTE DEPRESSA E RIACUTIZZAZIONE BRONCHITICA IN BPCO. EPISODIO DI FIBRILLAZIONE ATRIALE PAROSSISTICA REGREDITO SPONTANEAMENTE.",
+            "extract_start": 240,
+            "extract_end": 673,
+            "label": "fibrillazione atriale"
+        },
+        {
+            "icd9": "402",
+            "hierarchy": "ICD9CM Taxonomy/cardiopatia ipertensiva",
+            "extract": "Questo ricovero \u00e8 stato MOTIVATO da: Riacutizzazione bronchitica e fibrillazione atriale Gli accertamenti effettuati hanno permesso di concludere per la seguente diagnosi: INSUFFICIENZA RESPIRATORIA ACUTA E SCOMPENSO CARDIACO IN CARDIOPATIA IPERTENSIVA AD EVOLUZIONE DILATATIVA CON FUNZIONE SISTOLICA SEVERAMENTE DEPRESSA E RIACUTIZZAZIONE BRONCHITICA IN BPCO. EPISODIO DI FIBRILLAZIONE ATRIALE PAROSSISTICA REGREDITO SPONTANEAMENTE.",
+            "extract_start": 240,
+            "extract_end": 673,
+            "label": "cardiopatia ipertensiva"
+        },
+        {
+            "icd9": "518.81",
+            "hierarchy": "ICD9CM Taxonomy/altre malattie del polmone/altre malattie del polmone/insufficienza respiratoria acuta",
+            "extract": "Questo ricovero \u00e8 stato MOTIVATO da: Riacutizzazione bronchitica e fibrillazione atriale Gli accertamenti effettuati hanno permesso di concludere per la seguente diagnosi: INSUFFICIENZA RESPIRATORIA ACUTA E SCOMPENSO CARDIACO IN CARDIOPATIA IPERTENSIVA AD EVOLUZIONE DILATATIVA CON FUNZIONE SISTOLICA SEVERAMENTE DEPRESSA E RIACUTIZZAZIONE BRONCHITICA IN BPCO. EPISODIO DI FIBRILLAZIONE ATRIALE PAROSSISTICA REGREDITO SPONTANEAMENTE.",
+            "extract_start": 240,
+            "extract_end": 673,
+            "label": "insufficienza respiratoria acuta"
+        },
+        {
+            "icd9": "427.31",
+            "hierarchy": "ICD9CM Taxonomy/aritmie cardiache/fibrillazione e flutter atriali/fibrillazione atriale",
+            "extract": "EPISODIO DI FIBRILLAZIONE ATRIALE PAROSSISTICA REGREDITO SPONTANEAMENTE. DIABETE MELLITO DI TIPO II.",
+            "extract_start": 601,
+            "extract_end": 701,
+            "label": "fibrillazione atriale"
+        },
+        {
+            "icd9": "648.0",
+            "hierarchy": "ICD9CM Taxonomy/altre manifestazioni morbose in atto della madre classificate altrove, ma complicanti la gravidanza, il parto o il puerperio/diabete mellito",
+            "extract": "DIABETE MELLITO DI TIPO II. ESITI DI PREGRESSO INTERVENTO CHIRURGICO PER CARCINOMA DELLA LINGUA.",
+            "extract_start": 674,
+            "extract_end": 770,
+            "label": "diabete mellito"
+        },
+        {
+            "icd9": "250",
+            "hierarchy": "ICD9CM Taxonomy/diabete mellito",
+            "extract": "DIABETE MELLITO DI TIPO II. ESITI DI PREGRESSO INTERVENTO CHIRURGICO PER CARCINOMA DELLA LINGUA.",
+            "extract_start": 674,
+            "extract_end": 770,
+            "label": "diabete mellito"
+        },
+        {
+            "icd9": "e87.40",
+            "hierarchy": "ICD9CM Taxonomy/stato dei recettori degli estrogeni/guasto meccanico di strumento o apparecchiatura durante una procedura/intervento chirurgico",
+            "extract": "ESITI DI PREGRESSO INTERVENTO CHIRURGICO PER CARCINOMA DELLA LINGUA. Evoluzione clinica e terapie effettuate: durante la degenza impostata terapia antibiotica da prima terapia con ceftriaxone e levofloxacina con scarso beneficio clinico; successivamente sostituita da piperacillina tazobactam con buona risposta terapeutica; durante la degenza \u00e8 stato inoltre trattato con furosemide per via ev; ed \u00e8 stato sottoposto a FKT respiratoria per la presenza di importanti quantit\u00e0 di secreto bronchiale.",
+            "extract_start": 702,
+            "extract_end": 1200,
+            "label": "intervento chirurgico"
+        },
+        {
+            "icd9": "e87.00",
+            "hierarchy": "ICD9CM Taxonomy/stato dei recettori degli estrogeni/taglio, puntura, perforazione o emorragia accidentali durante cure mediche/intervento chirurgico",
+            "extract": "ESITI DI PREGRESSO INTERVENTO CHIRURGICO PER CARCINOMA DELLA LINGUA. Evoluzione clinica e terapie effettuate: durante la degenza impostata terapia antibiotica da prima terapia con ceftriaxone e levofloxacina con scarso beneficio clinico; successivamente sostituita da piperacillina tazobactam con buona risposta terapeutica; durante la degenza \u00e8 stato inoltre trattato con furosemide per via ev; ed \u00e8 stato sottoposto a FKT respiratoria per la presenza di importanti quantit\u00e0 di secreto bronchiale.",
+            "extract_start": 702,
+            "extract_end": 1200,
+            "label": "intervento chirurgico"
+        },
+        {
+            "icd9": "e87.10",
+            "hierarchy": "ICD9CM Taxonomy/stato dei recettori degli estrogeni/corpo estraneo lasciato nel corpo durante una procedura/intervento chirurgico",
+            "extract": "ESITI DI PREGRESSO INTERVENTO CHIRURGICO PER CARCINOMA DELLA LINGUA. Evoluzione clinica e terapie effettuate: durante la degenza impostata terapia antibiotica da prima terapia con ceftriaxone e levofloxacina con scarso beneficio clinico; successivamente sostituita da piperacillina tazobactam con buona risposta terapeutica; durante la degenza \u00e8 stato inoltre trattato con furosemide per via ev; ed \u00e8 stato sottoposto a FKT respiratoria per la presenza di importanti quantit\u00e0 di secreto bronchiale.",
+            "extract_start": 702,
+            "extract_end": 1200,
+            "label": "intervento chirurgico"
+        },
+        {
+            "icd9": "e87.20",
+            "hierarchy": "ICD9CM Taxonomy/stato dei recettori degli estrogeni/fallimento delle precauzioni per garantire la sterilita' durante una procedura/intervento chirurgico",
+            "extract": "ESITI DI PREGRESSO INTERVENTO CHIRURGICO PER CARCINOMA DELLA LINGUA. Evoluzione clinica e terapie effettuate: durante la degenza impostata terapia antibiotica da prima terapia con ceftriaxone e levofloxacina con scarso beneficio clinico; successivamente sostituita da piperacillina tazobactam con buona risposta terapeutica; durante la degenza \u00e8 stato inoltre trattato con furosemide per via ev; ed \u00e8 stato sottoposto a FKT respiratoria per la presenza di importanti quantit\u00e0 di secreto bronchiale.",
+            "extract_start": 702,
+            "extract_end": 1200,
+            "label": "intervento chirurgico"
+        },
+        {
+            "icd9": "527.1",
+            "hierarchy": "ICD9CM Taxonomy/malattie delle ghiandole salivari/ipertrofia",
+            "extract": "Ecocardiografia: eseguita in corso di FA con FC intorno a 140-150 bpm: ventricolo sinistro ai limiti dimensionali con lieve ipertrofia parietale e diffusa ipocinesia con FE severamente depressa; atriomegalia moderata bilaterale; aortosclerosi calcifica con gradienti conservati; fibrosclerosi mitralica con lieve reflusso; ventricolo destro nei limiti; non volume pericardico. ECG: all'ingresso fibrillazione atriale ad elevata risposta ventricolare.",
+            "extract_start": 2015,
+            "extract_end": 2465,
+            "label": "ipertrofia"
+        },
+        {
+            "icd9": "427.31",
+            "hierarchy": "ICD9CM Taxonomy/aritmie cardiache/fibrillazione e flutter atriali/fibrillazione atriale",
+            "extract": "ECG: all'ingresso fibrillazione atriale ad elevata risposta ventricolare. Blocco di branca sinistro.",
+            "extract_start": 2392,
+            "extract_end": 2492,
+            "label": "fibrillazione atriale"
+        },
+        {
+            "icd9": "89.52",
+            "hierarchy": "ICD9 Procedure Taxonomy/anamnesi, valutazione, consulto e visita/altri test funzionali diagnostici non invasivi cardiologici e vascolari/elettrocardiogramma",
+            "extract": "ECG: all'ingresso fibrillazione atriale ad elevata risposta ventricolare. Blocco di branca sinistro.",
+            "extract_start": 2392,
+            "extract_end": 2492,
+            "label": "elettrocardiogramma"
+        },
+        {
+            "icd9": "564.0",
+            "hierarchy": "ICD9CM Taxonomy/disturbi digestivi funzionali, non classificati altrove/stipsi",
+            "extract": "Terapia consigliata: TAZOPENIL 4G+500MG 1FIN FIS 100 PER 3 8-16-24 (ANCORA PER 2 GIORNI) FUROSEMIDE 25 MG 2 CP PER 3 8-12-20 (DA SCALARE AL DOMICILIO ASSUMEVA 2 CP DIE) KANRENOL 100 1 CP ORE 16 (O SEC CALIEMIA) LANOXIN 0,125 1 CP ORE 12 KROVANEG 30 1 CP ORE 8 REPAGLINIDE 1 MG 1 CP PER DUE PRANZO E CENA CLEXANE 4.000 SC ORE 8 FINO A MOBILIZZAZIONE CLENIL 1 FL+BREVA 7 GOCCE PER 3 VOLTE DIE 8-16-22 BROMAZEPAM 10 GOCCE PER 2 8-20 TOPONITRO 15 1 CEROTTO 8-22 MOVICOL 1 BUSTINA SE STIPSI OMNIC 0,4 1 CP ALLA SERA Indicazioni di follow up:periodico controllo di glicemia, hb glicata, eletroliti e creatinina e digossinemia. Da segnalare una allergia alla frutta a guscio.",
+            "extract_start": 2781,
+            "extract_end": 3449,
+            "label": "stipsi"
+        }
+    ],
+    "patient_data_for_vectorstore": [
+        {
+            "icd9": "e87.40",
+            "hierarchy": "ICD9CM Taxonomy/stato dei recettori degli estrogeni/guasto meccanico di strumento o apparecchiatura durante una procedura/intervento chirurgico",
+            "extract": "ESITI DI PREGRESSO INTERVENTO CHIRURGICO PER CARCINOMA DELLA LINGUA. Evoluzione clinica e terapie effettuate: durante la degenza impostata terapia antibiotica da prima terapia con ceftriaxone e levofloxacina con scarso beneficio clinico; successivamente sostituita da piperacillina tazobactam con buona risposta terapeutica; durante la degenza \u00e8 stato inoltre trattato con furosemide per via ev; ed \u00e8 stato sottoposto a FKT respiratoria per la presenza di importanti quantit\u00e0 di secreto bronchiale.",
+            "extract_start": 702,
+            "extract_end": 1200,
+            "label": "intervento chirurgico"
+        },
+        {
+            "icd9": "427",
+            "hierarchy": "ICD9CM Taxonomy/aritmie cardiache",
+            "extract": "Questo ricovero \u00e8 stato MOTIVATO da: Riacutizzazione bronchitica e fibrillazione atriale Gli accertamenti effettuati hanno permesso di concludere per la seguente diagnosi: INSUFFICIENZA RESPIRATORIA ACUTA E SCOMPENSO CARDIACO IN CARDIOPATIA IPERTENSIVA AD EVOLUZIONE DILATATIVA CON FUNZIONE SISTOLICA SEVERAMENTE DEPRESSA E RIACUTIZZAZIONE BRONCHITICA IN BPCO. EPISODIO DI FIBRILLAZIONE ATRIALE PAROSSISTICA REGREDITO SPONTANEAMENTE.",
+            "extract_start": 240,
+            "extract_end": 673,
+            "label": "aritmie cardiache"
+        },
+        {
+            "icd9": "427.31",
+            "hierarchy": "ICD9CM Taxonomy/aritmie cardiache/fibrillazione e flutter atriali/fibrillazione atriale",
+            "extract": "EPISODIO DI FIBRILLAZIONE ATRIALE PAROSSISTICA REGREDITO SPONTANEAMENTE. DIABETE MELLITO DI TIPO II.",
+            "extract_start": 601,
+            "extract_end": 701,
+            "label": "fibrillazione atriale"
+        },
+        {
+            "icd9": "427.31",
+            "hierarchy": "ICD9CM Taxonomy/aritmie cardiache/fibrillazione e flutter atriali/fibrillazione atriale",
+            "extract": "ECG: all'ingresso fibrillazione atriale ad elevata risposta ventricolare. Blocco di branca sinistro.",
+            "extract_start": 2392,
+            "extract_end": 2492,
+            "label": "fibrillazione atriale"
+        },
+        {
+            "icd9": "527.1",
+            "hierarchy": "ICD9CM Taxonomy/malattie delle ghiandole salivari/ipertrofia",
+            "extract": "Ecocardiografia: eseguita in corso di FA con FC intorno a 140-150 bpm: ventricolo sinistro ai limiti dimensionali con lieve ipertrofia parietale e diffusa ipocinesia con FE severamente depressa; atriomegalia moderata bilaterale; aortosclerosi calcifica con gradienti conservati; fibrosclerosi mitralica con lieve reflusso; ventricolo destro nei limiti; non volume pericardico. ECG: all'ingresso fibrillazione atriale ad elevata risposta ventricolare.",
+            "extract_start": 2015,
+            "extract_end": 2465,
+            "label": "ipertrofia"
+        },
+        {
+            "icd9": "564.0",
+            "hierarchy": "ICD9CM Taxonomy/disturbi digestivi funzionali, non classificati altrove/stipsi",
+            "extract": "Terapia consigliata: TAZOPENIL 4G+500MG 1FIN FIS 100 PER 3 8-16-24 (ANCORA PER 2 GIORNI) FUROSEMIDE 25 MG 2 CP PER 3 8-12-20 (DA SCALARE AL DOMICILIO ASSUMEVA 2 CP DIE) KANRENOL 100 1 CP ORE 16 (O SEC CALIEMIA) LANOXIN 0,125 1 CP ORE 12 KROVANEG 30 1 CP ORE 8 REPAGLINIDE 1 MG 1 CP PER DUE PRANZO E CENA CLEXANE 4.000 SC ORE 8 FINO A MOBILIZZAZIONE CLENIL 1 FL+BREVA 7 GOCCE PER 3 VOLTE DIE 8-16-22 BROMAZEPAM 10 GOCCE PER 2 8-20 TOPONITRO 15 1 CEROTTO 8-22 MOVICOL 1 BUSTINA SE STIPSI OMNIC 0,4 1 CP ALLA SERA Indicazioni di follow up:periodico controllo di glicemia, hb glicata, eletroliti e creatinina e digossinemia. Da segnalare una allergia alla frutta a guscio.",
+            "extract_start": 2781,
+            "extract_end": 3449,
+            "label": "stipsi"
+        },
+        {
+            "icd9": "648.0",
+            "hierarchy": "ICD9CM Taxonomy/altre manifestazioni morbose in atto della madre classificate altrove, ma complicanti la gravidanza, il parto o il puerperio/diabete mellito",
+            "extract": "DIABETE MELLITO DI TIPO II. ESITI DI PREGRESSO INTERVENTO CHIRURGICO PER CARCINOMA DELLA LINGUA.",
+            "extract_start": 674,
+            "extract_end": 770,
+            "label": "diabete mellito"
+        }
+    ],
+    "main_sentences": [
+        {
+            "end": 600,
+            "score": 30.1,
+            "start": 240,
+            "value": "Questo ricovero \u00e8 stato MOTIVATO da: Riacutizzazione bronchitica e fibrillazione atriale Gli accertamenti effettuati hanno permesso di concludere per la seguente diagnosi: INSUFFICIENZA RESPIRATORIA ACUTA E SCOMPENSO CARDIACO IN CARDIOPATIA IPERTENSIVA AD EVOLUZIONE DILATATIVA CON FUNZIONE SISTOLICA SEVERAMENTE DEPRESSA E RIACUTIZZAZIONE BRONCHITICA IN BPCO."
+        },
+        {
+            "end": 239,
+            "score": 20.1,
+            "start": 0,
+            "value": "Lettera di Dimissione del ***** Ai Colleghi della Casa di cura *** di **** e P.C. Egregio Collega, dott. ***** Oggi dimettiamo il Suo paziente Sig......di anni 83 - sesso maschile nato il **** ricoverato qui dal **** al **** per giorni 16."
+        },
+        {
+            "end": 2614,
+            "score": 9,
+            "start": 2493,
+            "value": "Ripristino del ritmo sinusale lo stesso giorno del ricovero si dimette in ritmo sinusale con buona risposta ventricolare."
+        }
+    ],
+    "topics": [
+        {
+            "id": 225,
+            "label": "medicine",
+            "score": 27.7,
+            "winner": true,
+            "normalized_score": 100.0
+        },
+        {
+            "id": 11,
+            "label": "anatomy",
+            "score": 3.79,
+            "winner": true,
+            "normalized_score": 10.11278195488722
+        },
+        {
+            "id": 69,
+            "label": "cardiology",
+            "score": 1.89,
+            "winner": true,
+            "normalized_score": 2.9699248120300745
+        },
+        {
+            "id": 134,
+            "label": "pharmacology",
+            "score": 1.29,
+            "winner": true,
+            "normalized_score": 0.7142857142857142
+        },
+        {
+            "id": 260,
+            "label": "hospitals",
+            "score": 1.2,
+            "winner": true,
+            "normalized_score": 0.3759398496240597
+        },
+        {
+            "id": 49,
+            "label": "biochemistry",
+            "score": 1.1,
+            "winner": false,
+            "normalized_score": 0.0
+        }
+    ],
+    "md5": "bb555149207befb2eb862d9822c2de9f"
+}

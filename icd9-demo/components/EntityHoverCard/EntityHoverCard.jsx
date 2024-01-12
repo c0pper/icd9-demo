@@ -12,7 +12,7 @@ const EntityHoverCard = ({ item }) => {
     const dispatch = useDispatch()
 
     const handleClick = () => {
-        dispatch(setTextHighlighting({ start: item.paragraph_start, end: item.paragraph_end }));
+        dispatch(setTextHighlighting({ start: item.extract_start, end: item.extract_end }));
         dispatch(setCurrentEntity(item));
     }
 

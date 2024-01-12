@@ -1,0 +1,694 @@
+{
+  "metricsCalculatorOutput": {
+    "categories": {},
+    "extractions": {}
+  },
+  "annotationsMatcherOutput": {},
+  "document": {
+    "parse_time": 15.47,
+    "analysis_time": 2.47,
+    "sections": []
+  },
+  "match_info": {
+    "pivot_attributes": {
+      "match": 29
+    },
+    "sequences": {
+      "match": 31
+    },
+    "rules": {
+      "match": 10,
+      "segment": [],
+      "categorization": [],
+      "extraction": [
+        {
+          "template": "cataratta",
+          "fields": [
+            {
+              "field": "date",
+              "value": "2005",
+              "instance": [
+                {
+                  "text": "2005",
+                  "rule_details": [
+                    {
+                      "id": 5,
+                      "label": "cataratta_date_before"
+                    }
+                  ],
+                  "pos": 20151,
+                  "len": 4,
+                  "snt": 332,
+                  "snt_begin": 20147,
+                  "snt_end": 20190,
+                  "syncon": -1,
+                  "ancestor": 100205892,
+                  "group_by": 0,
+                  "confidence": 1.0
+                }
+              ],
+              "confidence": 1.0
+            },
+            {
+              "field": "value",
+              "value": "cataratta",
+              "instance": [
+                {
+                  "text": "cataratta",
+                  "rule_details": [
+                    {
+                      "id": 5,
+                      "label": "cataratta_date_before"
+                    }
+                  ],
+                  "pos": 20171,
+                  "len": 9,
+                  "snt": 332,
+                  "snt_begin": 20147,
+                  "snt_end": 20190,
+                  "syncon": 100127724,
+                  "ancestor": -1,
+                  "group_by": 0,
+                  "confidence": 1.0
+                }
+              ],
+              "confidence": 1.0
+            }
+          ],
+          "instances": 2
+        },
+        {
+          "template": "cataratta",
+          "fields": [
+            {
+              "field": "value",
+              "value": "cataratta",
+              "instance": [
+                {
+                  "text": "cataratta",
+                  "rule_details": [
+                    {
+                      "id": 5,
+                      "label": "cataratta_date_before"
+                    }
+                  ],
+                  "pos": 2328,
+                  "len": 9,
+                  "snt": 47,
+                  "snt_begin": 2302,
+                  "snt_end": 2348,
+                  "syncon": 100127724,
+                  "ancestor": -1,
+                  "group_by": 0,
+                  "confidence": 1.0
+                }
+              ],
+              "confidence": 1.0
+            }
+          ],
+          "instances": 1
+        },
+        {
+          "template": "edema",
+          "fields": [
+            {
+              "field": "date",
+              "value": "2008",
+              "instance": [
+                {
+                  "text": "2008",
+                  "rule_details": [
+                    {
+                      "id": 6,
+                      "label": "edema_date_before"
+                    }
+                  ],
+                  "pos": 20142,
+                  "len": 4,
+                  "snt": 331,
+                  "snt_begin": 20082,
+                  "snt_end": 20145,
+                  "syncon": -1,
+                  "ancestor": 100205892,
+                  "group_by": 0,
+                  "confidence": 1.0
+                }
+              ],
+              "confidence": 1.0
+            },
+            {
+              "field": "value",
+              "value": "endoarteriectomia",
+              "instance": [
+                {
+                  "text": "Endoarteriectomia",
+                  "rule_details": [
+                    {
+                      "id": 6,
+                      "label": "edema_date_before"
+                    }
+                  ],
+                  "pos": 20109,
+                  "len": 17,
+                  "snt": 331,
+                  "snt_begin": 20082,
+                  "snt_end": 20145,
+                  "syncon": 100081476,
+                  "ancestor": -1,
+                  "group_by": 0,
+                  "confidence": 1.0
+                }
+              ],
+              "confidence": 1.0
+            }
+          ],
+          "instances": 2
+        },
+        {
+          "template": "edema",
+          "fields": [
+            {
+              "field": "value",
+              "value": "endoarteriectomia",
+              "instance": [
+                {
+                  "text": "Endoarteriectomia",
+                  "rule_details": [
+                    {
+                      "id": 6,
+                      "label": "edema_date_before"
+                    }
+                  ],
+                  "pos": 1062,
+                  "len": 17,
+                  "snt": 28,
+                  "snt_begin": 1035,
+                  "snt_end": 1090,
+                  "syncon": 100081476,
+                  "ancestor": -1,
+                  "group_by": 0,
+                  "confidence": 1.0
+                }
+              ],
+              "confidence": 1.0
+            }
+          ],
+          "instances": 1
+        },
+        {
+          "template": "edema",
+          "fields": [
+            {
+              "field": "value",
+              "value": "endoarteriectomia",
+              "instance": [
+                {
+                  "text": "Endoarteriectomia",
+                  "rule_details": [
+                    {
+                      "id": 6,
+                      "label": "edema_date_before"
+                    }
+                  ],
+                  "pos": 10874,
+                  "len": 17,
+                  "snt": 184,
+                  "snt_begin": 10789,
+                  "snt_end": 10890,
+                  "syncon": 100081476,
+                  "ancestor": -1,
+                  "group_by": 1000000,
+                  "confidence": 1.0
+                }
+              ],
+              "confidence": 1.0
+            }
+          ],
+          "instances": 1
+        },
+        {
+          "template": "edema",
+          "fields": [
+            {
+              "field": "value",
+              "value": "endoarteriectomia",
+              "instance": [
+                {
+                  "text": "endoarteriectomia",
+                  "rule_details": [
+                    {
+                      "id": 6,
+                      "label": "edema_date_before"
+                    }
+                  ],
+                  "pos": 18683,
+                  "len": 17,
+                  "snt": 301,
+                  "snt_begin": 18683,
+                  "snt_end": 18721,
+                  "syncon": 100081476,
+                  "ancestor": -1,
+                  "group_by": 2000000,
+                  "confidence": 1.0
+                }
+              ],
+              "confidence": 1.0
+            }
+          ],
+          "instances": 1
+        },
+        {
+          "template": "endoarteriectomia",
+          "fields": [
+            {
+              "field": "date",
+              "value": "2013",
+              "instance": [
+                {
+                  "text": "2013",
+                  "rule_details": [
+                    {
+                      "id": 4,
+                      "label": "cat_date_before"
+                    }
+                  ],
+                  "pos": 20202,
+                  "len": 4,
+                  "snt": 333,
+                  "snt_begin": 20192,
+                  "snt_end": 20205,
+                  "syncon": -1,
+                  "ancestor": 100205892,
+                  "group_by": 0,
+                  "confidence": 1.0
+                }
+              ],
+              "confidence": 1.0
+            },
+            {
+              "field": "value",
+              "value": "edema",
+              "instance": [
+                {
+                  "text": "edema",
+                  "rule_details": [
+                    {
+                      "id": 4,
+                      "label": "cat_date_before"
+                    }
+                  ],
+                  "pos": 20192,
+                  "len": 5,
+                  "snt": 333,
+                  "snt_begin": 20192,
+                  "snt_end": 20205,
+                  "syncon": 100152234,
+                  "ancestor": -1,
+                  "group_by": 0,
+                  "confidence": 1.0
+                }
+              ],
+              "confidence": 1.0
+            }
+          ],
+          "instances": 2
+        },
+        {
+          "template": "endoarteriectomia",
+          "fields": [
+            {
+              "field": "value",
+              "value": "edema polmonare acuto",
+              "instance": [
+                {
+                  "text": "edema polmonare acuto",
+                  "rule_details": [
+                    {
+                      "id": 4,
+                      "label": "cat_date_before"
+                    }
+                  ],
+                  "pos": 1804,
+                  "len": 21,
+                  "snt": 40,
+                  "snt_begin": 1779,
+                  "snt_end": 1825,
+                  "syncon": 100857667,
+                  "ancestor": -1,
+                  "group_by": 0,
+                  "confidence": 1.0
+                }
+              ],
+              "confidence": 1.0
+            }
+          ],
+          "instances": 1
+        },
+        {
+          "template": "endoarteriectomia",
+          "fields": [
+            {
+              "field": "value",
+              "value": "edema",
+              "instance": [
+                {
+                  "text": "edemi",
+                  "rule_details": [
+                    {
+                      "id": 4,
+                      "label": "cat_date_before"
+                    }
+                  ],
+                  "pos": 2677,
+                  "len": 5,
+                  "snt": 55,
+                  "snt_begin": 2674,
+                  "snt_end": 2711,
+                  "syncon": 100152234,
+                  "ancestor": -1,
+                  "group_by": 1000000,
+                  "confidence": 1.0
+                }
+              ],
+              "confidence": 1.0
+            }
+          ],
+          "instances": 1
+        },
+        {
+          "template": "endoarteriectomia",
+          "fields": [
+            {
+              "field": "value",
+              "value": "edema polmonare acuto",
+              "instance": [
+                {
+                  "text": "edema polmonare acuto",
+                  "rule_details": [
+                    {
+                      "id": 4,
+                      "label": "cat_date_before"
+                    }
+                  ],
+                  "pos": 4031,
+                  "len": 21,
+                  "snt": 74,
+                  "snt_begin": 4006,
+                  "snt_end": 4071,
+                  "syncon": 100857667,
+                  "ancestor": -1,
+                  "group_by": 2000000,
+                  "confidence": 1.0
+                }
+              ],
+              "confidence": 1.0
+            }
+          ],
+          "instances": 1
+        },
+        {
+          "template": "endoarteriectomia",
+          "fields": [
+            {
+              "field": "value",
+              "value": "edema",
+              "instance": [
+                {
+                  "text": "edemi",
+                  "rule_details": [
+                    {
+                      "id": 4,
+                      "label": "cat_date_before"
+                    }
+                  ],
+                  "pos": 6548,
+                  "len": 5,
+                  "snt": 113,
+                  "snt_begin": 6548,
+                  "snt_end": 6604,
+                  "syncon": 100152234,
+                  "ancestor": -1,
+                  "group_by": 3000000,
+                  "confidence": 1.0
+                }
+              ],
+              "confidence": 1.0
+            }
+          ],
+          "instances": 1
+        }
+      ],
+      "tagger": [
+        {
+          "level": 10000,
+          "tags": [
+            {
+              "tag": "cataratta",
+              "syncon": -1,
+              "level": 0,
+              "value": "cataratta",
+              "pos": 2328,
+              "len": 9,
+              "token_begin": 422,
+              "token_end": 422,
+              "rules": [
+                0
+              ],
+              "gt": ""
+            },
+            {
+              "tag": "cataratta",
+              "syncon": -1,
+              "level": 0,
+              "value": "cataratta",
+              "pos": 20171,
+              "len": 9,
+              "token_begin": 4023,
+              "token_end": 4023,
+              "rules": [
+                0
+              ],
+              "gt": ""
+            },
+            {
+              "tag": "date",
+              "syncon": -1,
+              "level": 0,
+              "value": "19/8 mmHg",
+              "pos": 15081,
+              "len": 9,
+              "token_begin": 3008,
+              "token_end": 3012,
+              "rules": [
+                3
+              ],
+              "gt": ""
+            },
+            {
+              "tag": "date",
+              "syncon": -1,
+              "level": 0,
+              "value": "2/6",
+              "pos": 6455,
+              "len": 3,
+              "token_begin": 1120,
+              "token_end": 1123,
+              "rules": [
+                3
+              ],
+              "gt": ""
+            },
+            {
+              "tag": "date",
+              "syncon": -1,
+              "level": 0,
+              "value": "2005",
+              "pos": 20151,
+              "len": 4,
+              "token_begin": 4020,
+              "token_end": 4020,
+              "rules": [
+                3
+              ],
+              "gt": ""
+            },
+            {
+              "tag": "date",
+              "syncon": -1,
+              "level": 0,
+              "value": "2008",
+              "pos": 20142,
+              "len": 4,
+              "token_begin": 4018,
+              "token_end": 4018,
+              "rules": [
+                3
+              ],
+              "gt": ""
+            },
+            {
+              "tag": "date",
+              "syncon": -1,
+              "level": 0,
+              "value": "2013",
+              "pos": 20202,
+              "len": 4,
+              "token_begin": 4027,
+              "token_end": 4027,
+              "rules": [
+                3
+              ],
+              "gt": ""
+            },
+            {
+              "tag": "date",
+              "syncon": -1,
+              "level": 0,
+              "value": "8 - 12 - 20",
+              "pos": 19387,
+              "len": 11,
+              "token_begin": 3850,
+              "token_end": 3855,
+              "rules": [
+                3
+              ],
+              "gt": ""
+            },
+            {
+              "tag": "edema",
+              "syncon": -1,
+              "level": 0,
+              "value": "Endoarteriectomia",
+              "pos": 1062,
+              "len": 17,
+              "token_begin": 224,
+              "token_end": 224,
+              "rules": [
+                1
+              ],
+              "gt": ""
+            },
+            {
+              "tag": "edema",
+              "syncon": -1,
+              "level": 0,
+              "value": "Endoarteriectomia",
+              "pos": 10874,
+              "len": 17,
+              "token_begin": 2139,
+              "token_end": 2139,
+              "rules": [
+                1
+              ],
+              "gt": ""
+            },
+            {
+              "tag": "edema",
+              "syncon": -1,
+              "level": 0,
+              "value": "Endoarteriectomia",
+              "pos": 20109,
+              "len": 17,
+              "token_begin": 4014,
+              "token_end": 4014,
+              "rules": [
+                1
+              ],
+              "gt": ""
+            },
+            {
+              "tag": "edema",
+              "syncon": -1,
+              "level": 0,
+              "value": "endoarteriectomia",
+              "pos": 18683,
+              "len": 17,
+              "token_begin": 3655,
+              "token_end": 3655,
+              "rules": [
+                1
+              ],
+              "gt": ""
+            },
+            {
+              "tag": "endoarteriectomia",
+              "syncon": -1,
+              "level": 0,
+              "value": "edema",
+              "pos": 20192,
+              "len": 5,
+              "token_begin": 4025,
+              "token_end": 4025,
+              "rules": [
+                2
+              ],
+              "gt": ""
+            },
+            {
+              "tag": "endoarteriectomia",
+              "syncon": -1,
+              "level": 0,
+              "value": "edema polmonare acuto",
+              "pos": 1804,
+              "len": 21,
+              "token_begin": 333,
+              "token_end": 336,
+              "rules": [
+                2
+              ],
+              "gt": ""
+            },
+            {
+              "tag": "endoarteriectomia",
+              "syncon": -1,
+              "level": 0,
+              "value": "edema polmonare acuto",
+              "pos": 4031,
+              "len": 21,
+              "token_begin": 714,
+              "token_end": 717,
+              "rules": [
+                2
+              ],
+              "gt": ""
+            },
+            {
+              "tag": "endoarteriectomia",
+              "syncon": -1,
+              "level": 0,
+              "value": "edemi",
+              "pos": 2677,
+              "len": 5,
+              "token_begin": 492,
+              "token_end": 492,
+              "rules": [
+                2
+              ],
+              "gt": ""
+            },
+            {
+              "tag": "endoarteriectomia",
+              "syncon": -1,
+              "level": 0,
+              "value": "edemi",
+              "pos": 6548,
+              "len": 5,
+              "token_begin": 1142,
+              "token_end": 1142,
+              "rules": [
+                2
+              ],
+              "gt": ""
+            }
+          ]
+        }
+      ]
+    },
+    "checksum": "00f722a5"
+  },
+  "script_info": {},
+  "jr_output": "",
+  "properties": {
+    "ANNOTATIONS_MD5": ""
+  }
+}

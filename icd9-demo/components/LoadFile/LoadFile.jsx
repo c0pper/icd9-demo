@@ -11,9 +11,12 @@ import { useDispatch } from 'react-redux'
 import { useState } from 'react'
 import { setInputText } from '@slices/input-text/InputTextSlice'
 import { setPlatformOutput } from '@slices/platform-output/platformOutputSlice'
+import { setDateExtractionOutput } from "@slices/date-extraction-output/DateExtractionOutputSlice"
 import { setProcessedPlatformOutput } from "@slices/processed-platform-output/processedPlatformOutputSlice"
 import dummyOutput from '../../dummy-output.json';
-import dummyProcessedPlatformOutput from '../../dummy-processed-platform-output.json'
+import dummyOutputFarmaci from '../../dummy-output-farmaci.json';
+import dummyDateExtractionOutput from '../../dummy_date_extraction_output.json'
+// import dummyProcessedPlatformOutput from '../../dummy-processed-platform-output.json'
 import axios from "axios";
 
 const LoadFile = () => {
@@ -36,9 +39,14 @@ const LoadFile = () => {
             description: file.name,
         });
 
-        await dispatch(setPlatformOutput(dummyOutput))
+        // await dispatch(setPlatformOutput(dummyOutput))
+        await dispatch(setPlatformOutput(dummyOutputFarmaci))
+        
+        console.log("date", dummyDateExtractionOutput)
+        await dispatch(setDateExtractionOutput(dummyDateExtractionOutput))
         // const platformOutput = dummyOutput
-        await processPlatformOutput(dummyOutput);
+        // await processPlatformOutput(dummyOutput);
+        await processPlatformOutput(dummyOutputFarmaci);
         // dispatch(setProcessedPlatformOutput(dummyProcessedPlatformOutput))
       };
       reader.readAsText(file);

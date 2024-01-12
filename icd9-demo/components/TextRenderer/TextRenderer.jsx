@@ -16,7 +16,7 @@ const TextRenderer = () => {
     // const { extractions } = dummyProcessedPlatformOutput
     // const matchingItem = extractions.find((item) => highlightIndexes && item.paragraph_start === highlightIndexes.start && item.icd9 === currentEntity.icd9); 
     const { patient_data_full } = useSelector((state) => state.processedPlatformOutput.value)
-    const matchingItem = patient_data_full.find((item) => highlightIndexes && item.paragraph_start === highlightIndexes.start && item.icd9 === currentEntity.icd9); 
+    const matchingItem = patient_data_full.find((item) => highlightIndexes && item.extract_start === highlightIndexes.start && item.icd9 === currentEntity.icd9); 
 
         
     return (
@@ -76,6 +76,7 @@ const TextRenderer = () => {
                     )
                 }
             </ScrollArea>
+            
         </div>
     )
 }

@@ -37,6 +37,7 @@ function App() {
                   <TabsTrigger value="overview">Overview</TabsTrigger>
                   <TabsTrigger value="timeline">Timeline</TabsTrigger>
                 </TabsList>
+                
                 <TabsContent value="overview">
                   <div className='grid grid-cols-2 gap-4'>
                     <div className='flex-1 main-areas'>
@@ -69,7 +70,6 @@ function App() {
                   <div className=' grid grid-cols-12'>
                     <div className=' col-span-12  col-start-2 col-end-12'>
                       <Timeline />
-
                     </div>
 
                   </div>

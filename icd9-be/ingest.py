@@ -141,78 +141,79 @@ def process_platform_output(platform_out):
             if uri:
                 icd9code = uri.split("/")[-1]
 
-            positions = extraction["fields"][0]["positions"]
-            extraction_paragraphs = []
-            extraction_sentences = []
-            for pos in positions:
-                for t in tokens:
-                    if pos["start"] == t["start"]:
-                        if len(paragraphs) > 1:
-                            paragraph, paragraph_start, paragraph_end = enrich_paragraph_or_sentence(t, platform_out, "paragraph")
-                            extraction_paragraphs.append(paragraph)
-                        else:
-                            sentence, sentence_start, sentence_end = enrich_paragraph_or_sentence(t, platform_out, "sentence")
-                            extraction_sentences.append(sentence)
-                        # #Individuazione paragraph
-                        # paragraph_idx = t["paragraph"]
-                        # paragraph_start = paragraphs[paragraph_idx]["start"]
-                        # paragraph_end = paragraphs[paragraph_idx]["end"]
-                        # paragraph = text[paragraph_start:paragraph_end]
+            if not label.lower() == "date":
+                positions = extraction["fields"][0]["positions"]
+                extraction_paragraphs = []
+                extraction_sentences = []
+                for pos in positions:
+                    for t in tokens:
+                        if pos["start"] == t["start"]:
+                            if len(paragraphs) > 1:
+                                paragraph, paragraph_start, paragraph_end = enrich_paragraph_or_sentence(t, platform_out, "paragraph")
+                                extraction_paragraphs.append(paragraph)
+                            else:
+                                sentence, sentence_start, sentence_end = enrich_paragraph_or_sentence(t, platform_out, "sentence")
+                                extraction_sentences.append(sentence)
+                            # #Individuazione paragraph
+                            # paragraph_idx = t["paragraph"]
+                            # paragraph_start = paragraphs[paragraph_idx]["start"]
+                            # paragraph_end = paragraphs[paragraph_idx]["end"]
+                            # paragraph = text[paragraph_start:paragraph_end]
 
-                        # # Arricchimento paragraph con testo precedente fino al punto/accapo
-                        # prev_text_reversed = []
-                        # reversed_prev_text_full = list(reversed(text[:paragraph_start]))
-                        # for idx, char in enumerate(reversed_prev_text_full):
-                        #     two_chars = reversed_prev_text_full[idx] + reversed_prev_text_full[idx+1] 
-                        #     if not two_chars in [" .", "\n.", "\n\n"]:
-                        #         prev_text_reversed.append(char)
-                        #     else:
-                        #         break
-                        # prev_text = "".join(reversed(prev_text_reversed))
-                        # paragraph = prev_text + paragraph
+                            # # Arricchimento paragraph con testo precedente fino al punto/accapo
+                            # prev_text_reversed = []
+                            # reversed_prev_text_full = list(reversed(text[:paragraph_start]))
+                            # for idx, char in enumerate(reversed_prev_text_full):
+                            #     two_chars = reversed_prev_text_full[idx] + reversed_prev_text_full[idx+1] 
+                            #     if not two_chars in [" .", "\n.", "\n\n"]:
+                            #         prev_text_reversed.append(char)
+                            #     else:
+                            #         break
+                            # prev_text = "".join(reversed(prev_text_reversed))
+                            # paragraph = prev_text + paragraph
 
-                        # # Arricchimento paragraph con testo successivo fino al punto/accapo
-                        # next_text = []
-                        # next_text_full = text[paragraph_end:]
-                        # for idx, char in enumerate(next_text_full):
-                        #     try:
-                        #         two_chars = next_text_full[idx] + next_text_full[idx+1]
-                        #     except IndexError:
-                        #         two_chars = next_text_full[idx]
-                        #     if not two_chars in [". ", ".\n", "\n\n"]:
-                        #         next_text.append(char)
-                        #     else:
-                        #         break
-                        # next_text = "".join(next_text)
-                        # paragraph = paragraph + next_text + "."
-            
-            if len(paragraphs) > 1:
-                data_point = {
-                        "icd9": icd9code,
-                        "hierarchy": hierarchy,
-                        "extract": "\n".join(extraction_paragraphs),
-                        "extract_start": paragraph_start,
-                        "extract_end": paragraph_end,
-                        "label": label
-                    }
-            elif len(paragraphs) <= 1:
-                data_point = {
-                        "icd9": icd9code,
-                        "hierarchy": hierarchy,
-                        "extract": "\n".join(extraction_sentences),
-                        "extract_start": sentence_start,
-                        "extract_end": sentence_end,
-                        "label": label
-                    }
-
-            if patient_data_for_vectorstore:
-                if data_point["extract"] not in [i["extract"] for i in patient_data_for_vectorstore]:
-                    patient_data_for_vectorstore.append(data_point)
-            else:
-                patient_data_for_vectorstore.append(data_point)
+                            # # Arricchimento paragraph con testo successivo fino al punto/accapo
+                            # next_text = []
+                            # next_text_full = text[paragraph_end:]
+                            # for idx, char in enumerate(next_text_full):
+                            #     try:
+                            #         two_chars = next_text_full[idx] + next_text_full[idx+1]
+                            #     except IndexError:
+                            #         two_chars = next_text_full[idx]
+                            #     if not two_chars in [". ", ".\n", "\n\n"]:
+                            #         next_text.append(char)
+                            #     else:
+                            #         break
+                            # next_text = "".join(next_text)
+                            # paragraph = paragraph + next_text + "."
                 
-            patient_data_full.append(data_point)
-            # print(f"CODICE ICD-9: {data_point['icd9']}\nGERARCHIA ICD-9: {data_point['hierarchy']}\nESTRATTO:\n {data_point['extract']} \n\n##################\n ")
+                if len(paragraphs) > 1:
+                    data_point = {
+                            "icd9": icd9code,
+                            "hierarchy": hierarchy,
+                            "extract": "\n".join(extraction_paragraphs),
+                            "extract_start": paragraph_start,
+                            "extract_end": paragraph_end,
+                            "label": label
+                        }
+                elif len(paragraphs) <= 1:
+                    data_point = {
+                            "icd9": icd9code,
+                            "hierarchy": hierarchy,
+                            "extract": "\n".join(extraction_sentences),
+                            "extract_start": sentence_start,
+                            "extract_end": sentence_end,
+                            "label": label
+                        }
+
+                if patient_data_for_vectorstore:
+                    if data_point["extract"] not in [i["extract"] for i in patient_data_for_vectorstore]:
+                        patient_data_for_vectorstore.append(data_point)
+                else:
+                    patient_data_for_vectorstore.append(data_point)
+                    
+                patient_data_full.append(data_point)
+                # print(f"CODICE ICD-9: {data_point['icd9']}\nGERARCHIA ICD-9: {data_point['hierarchy']}\nESTRATTO:\n {data_point['extract']} \n\n##################\n ")
         else:
             print(f"Concept {concept_value} not found in extradata")
 

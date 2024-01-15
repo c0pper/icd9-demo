@@ -3,14 +3,16 @@ import gpt
 from flask_cors import CORS
 from ingest import get_retriever, process_platform_output
 import json
+from dateutil import parser
 import os
+import re
+
 
 app = Flask(__name__)
 CORS(app)
 
 
 def get_body_parts_and_instances(json_ouput):
-    
     result_list = []
     for extraction in json_ouput.get("rules", {}).get("extraction", []):
         for field in extraction.get("fields", []):
@@ -28,6 +30,65 @@ def get_body_parts_and_instances(json_ouput):
         result_list.append(extracted_info)
     sorted_result_list = sorted(result_list, key=lambda x: x["instances"], reverse=True)
     return sorted_result_list
+
+
+@app.route('/api/get_timeline_dates', methods=['POST'])
+def get_timeline_dates():
+    text = request.json.get('text').replace("	", "  ")
+    
+    if not text:
+        return jsonify({"error": "Missing 'text' in the request payload"}), 400
+    
+    print("Getting timeline dates\n-----------------------------")
+    response = gpt.ask_chatGPT_dates(text)["content"]
+    # response = """'- Ricovero del 4.09.07 al 15.09.07 per intervento chirurgico di asportazione di disco intervertebrale - Settembre 2007\n- Ricovero dal 07.01.08 al 12.01.08 presso la SOD Medicina del Dolore e Palliativa a causa di radicolopatia all\'arto inferiore destro post-laminectomia - Gennaio 2008\n- Visita presso l\'U.O. di Neurochirurgia dell\'Ospedale di Bergamo per "indispensabile intenso trattamento fisioterapico" - 15 gennaio 2008'"""
+#     response = """
+# - Ricovero del 4.09.07 al 15.09.07 per intervento chirurgico di asportazione di disco intervertebrale
+# - Ricovero dal 07.01.08 al 12.01.08 per radicolopatia post-laminectomia
+# - Visita presso l'U.O. di Neurochirurgia dell'Ospedale di Bergamo il 15.01.08, con prescrizione di terapia fisioterapica
+# """
+
+    events_list = [line.strip() for line in response.split('\n') if line.strip()]
+    
+    events_with_year = []
+    events_no_year = []
+    for event in events_list:
+        event_dict = {}
+        parts = event.split(' - ')
+        if len(parts) == 2:
+            key, date_str = parts
+            # try:
+                # year = parser.parse(date_str).year
+            event_dict["event"] = key
+            match = re.search(r'\b\d{4}\b', date_str)
+            if match:
+                year = match.group(0)
+                event_dict["year"] = year
+                events_with_year.append(event_dict)
+            else:
+                event_dict["year"] = date_str
+                events_no_year.append(event_dict)
+
+        else:
+            date_pattern = re.compile(r'\b\d{1,2}\.\d{1,2}\.(\d{2,4})\b')
+            matches = date_pattern.findall(event)
+            if matches:
+                first_match_year = matches[0]
+                event_dict["year"] = first_match_year
+                event_dict["event"] = event
+                events_with_year.append(event_dict)
+            else:
+                event_dict["event"] = event
+                event_dict["year"] = 'Formato non valido'
+                events_no_year.append(event_dict)
+
+    sorted_events_with_year = sorted(events_with_year, key=lambda x: x['year'])
+
+    print(f"repsonse\n{response}\n")
+    print(f"w/year\n{sorted_events_with_year}\n")
+    print(f"no/year\n{events_no_year}\n")
+
+    return jsonify({"events_with_year": sorted_events_with_year, "events_no_year": events_no_year})
 
 
 @app.route('/api/process_platform_output', methods=['POST'])

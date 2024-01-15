@@ -14,6 +14,7 @@ import { setPlatformOutput } from '@slices/platform-output/platformOutputSlice'
 import { setDateExtractionOutput } from "@slices/date-extraction-output/DateExtractionOutputSlice"
 import { setProcessedPlatformOutput } from "@slices/processed-platform-output/processedPlatformOutputSlice"
 import dummyOutput from '../../dummy-output.json';
+import dummyOutputCristina from '../../5508 Di Nunzio Cristina.json';
 import dummyOutputFarmaci from '../../dummy-output-farmaci.json';
 import dummyDateExtractionOutput from '../../dummy_date_extraction_output.json'
 // import dummyProcessedPlatformOutput from '../../dummy-processed-platform-output.json'
@@ -39,14 +40,16 @@ const LoadFile = () => {
             description: file.name,
         });
 
-        await dispatch(setPlatformOutput(dummyOutput))
+        // await dispatch(setPlatformOutput(dummyOutput))
         // await dispatch(setPlatformOutput(dummyOutputFarmaci))
+        await dispatch(setPlatformOutput(dummyOutputCristina))
         
         console.log("date", dummyDateExtractionOutput)
         await dispatch(setDateExtractionOutput(dummyDateExtractionOutput))
-        // const platformOutput = dummyOutput
-        await processPlatformOutput(dummyOutput);
+        
+        // await processPlatformOutput(dummyOutput);
         // await processPlatformOutput(dummyOutputFarmaci);
+        await processPlatformOutput(dummyOutputCristina);
         // dispatch(setProcessedPlatformOutput(dummyProcessedPlatformOutput))
       };
       reader.readAsText(file);

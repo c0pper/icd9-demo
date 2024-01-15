@@ -17,6 +17,44 @@ client = OpenAI(
 )
 
 
+def ask_chatGPT_dates(text):
+    system_prompt = f"""
+### Instructions:
+Given the text provided by the user, find the medical events with reported dates and reported them in a list of events and dates. Do not make up anything. Always use "-" as a separator. 
+
+### Example:
+fili di stimolazione epicardica sono stati rimossi - 2015
+
+### Answer:
+"""
+    
+
+    response = client.chat.completions.create(
+        seed=69420,
+        model=model,
+        messages=[
+            {
+                "role": "system",
+                "content": system_prompt
+            },
+            {
+                "role": "user",
+                "content": text,
+            }
+        ],
+    )
+
+    response_text = response.choices[0].message.content
+    full_response = {}
+    full_response["status"] = True
+    full_response["content"] = response_text
+    full_response["source"] = "gpt-api"
+    full_response["prompt"] = text,
+    # full_response["gpt_response"] = response
+
+    return full_response
+
+
 def ask_chatGPT_map_bodyparts(output_body_parts):
     prompt = f"""
 ### Instructions

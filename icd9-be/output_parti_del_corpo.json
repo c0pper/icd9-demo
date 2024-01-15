@@ -1,0 +1,1199 @@
+{
+  "metricsCalculatorOutput": {
+    "categories": {},
+    "extractions": {}
+  },
+  "annotationsMatcherOutput": {},
+  "document": {
+    "parse_time": 18.37,
+    "analysis_time": 2.29,
+    "sections": []
+  },
+  "match_info": {
+    "pivot_attributes": {
+      "match": 45
+    },
+    "sequences": {
+      "match": 45
+    },
+    "rules": {
+      "match": 1,
+      "segment": [],
+      "categorization": [],
+      "extraction": [
+        {
+          "template": "parti_corpo",
+          "fields": [
+            {
+              "field": "parte_corpo",
+              "value": "arti inferiori",
+              "instance": [
+                {
+                  "text": "arti inferiori",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 2697,
+                  "len": 14,
+                  "snt": 55,
+                  "snt_begin": 2674,
+                  "snt_end": 2711,
+                  "syncon": 106027402,
+                  "ancestor": -1,
+                  "group_by": 0,
+                  "confidence": 1.0
+                },
+                {
+                  "text": "arti inferiori",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 3580,
+                  "len": 14,
+                  "snt": 68,
+                  "snt_begin": 3533,
+                  "snt_end": 3643,
+                  "syncon": 106027402,
+                  "ancestor": -1,
+                  "group_by": 3000000,
+                  "confidence": 1.0
+                },
+                {
+                  "text": "arti inferiori",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 5577,
+                  "len": 14,
+                  "snt": 96,
+                  "snt_begin": 5557,
+                  "snt_end": 5603,
+                  "syncon": 106027402,
+                  "ancestor": -1,
+                  "group_by": 9000000,
+                  "confidence": 1.0
+                }
+              ],
+              "confidence": 1.0
+            }
+          ],
+          "instances": 3
+        },
+        {
+          "template": "parti_corpo",
+          "fields": [
+            {
+              "field": "parte_corpo",
+              "value": "torace",
+              "instance": [
+                {
+                  "text": "torace",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 2823,
+                  "len": 6,
+                  "snt": 57,
+                  "snt_begin": 2779,
+                  "snt_end": 2881,
+                  "syncon": 102576226,
+                  "ancestor": -1,
+                  "group_by": 1000000,
+                  "confidence": 1.0
+                },
+                {
+                  "text": "torace",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 5370,
+                  "len": 6,
+                  "snt": 93,
+                  "snt_begin": 5323,
+                  "snt_end": 5378,
+                  "syncon": 102576226,
+                  "ancestor": -1,
+                  "group_by": 7000000,
+                  "confidence": 1.0
+                },
+                {
+                  "text": "torace",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 6056,
+                  "len": 6,
+                  "snt": 102,
+                  "snt_begin": 5989,
+                  "snt_end": 6094,
+                  "syncon": 102576226,
+                  "ancestor": -1,
+                  "group_by": 10000000,
+                  "confidence": 1.0
+                },
+                {
+                  "text": "torace",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 6878,
+                  "len": 6,
+                  "snt": 120,
+                  "snt_begin": 6862,
+                  "snt_end": 6896,
+                  "syncon": 102576226,
+                  "ancestor": -1,
+                  "group_by": 13000000,
+                  "confidence": 1.0
+                },
+                {
+                  "text": "torace",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 15215,
+                  "len": 6,
+                  "snt": 243,
+                  "snt_begin": 15212,
+                  "snt_end": 15303,
+                  "syncon": 102576226,
+                  "ancestor": -1,
+                  "group_by": 27000000,
+                  "confidence": 1.0
+                },
+                {
+                  "text": "torace",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 15246,
+                  "len": 6,
+                  "snt": 243,
+                  "snt_begin": 15212,
+                  "snt_end": 15303,
+                  "syncon": 102576226,
+                  "ancestor": -1,
+                  "group_by": 27010000,
+                  "confidence": 1.0
+                },
+                {
+                  "text": "torace",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 18279,
+                  "len": 6,
+                  "snt": 294,
+                  "snt_begin": 18263,
+                  "snt_end": 18297,
+                  "syncon": 102576226,
+                  "ancestor": -1,
+                  "group_by": 35000000,
+                  "confidence": 1.0
+                }
+              ],
+              "confidence": 1.0
+            }
+          ],
+          "instances": 7
+        },
+        {
+          "template": "parti_corpo",
+          "fields": [
+            {
+              "field": "parte_corpo",
+              "value": "encefalo",
+              "instance": [
+                {
+                  "text": "encefalo",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 3112,
+                  "len": 8,
+                  "snt": 61,
+                  "snt_begin": 3100,
+                  "snt_end": 3209,
+                  "syncon": 100075865,
+                  "ancestor": -1,
+                  "group_by": 2000000,
+                  "confidence": 1.0
+                },
+                {
+                  "text": "encefalo",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 3855,
+                  "len": 8,
+                  "snt": 71,
+                  "snt_begin": 3754,
+                  "snt_end": 3862,
+                  "syncon": 100075865,
+                  "ancestor": -1,
+                  "group_by": 4000000,
+                  "confidence": 1.0
+                },
+                {
+                  "text": "encefalo",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 4496,
+                  "len": 8,
+                  "snt": 80,
+                  "snt_begin": 4443,
+                  "snt_end": 4513,
+                  "syncon": 100075865,
+                  "ancestor": -1,
+                  "group_by": 6000000,
+                  "confidence": 1.0
+                }
+              ],
+              "confidence": 1.0
+            }
+          ],
+          "instances": 3
+        },
+        {
+          "template": "parti_corpo",
+          "fields": [
+            {
+              "field": "parte_corpo",
+              "value": "destro",
+              "instance": [
+                {
+                  "text": "destro",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 4401,
+                  "len": 6,
+                  "snt": 79,
+                  "snt_begin": 4401,
+                  "snt_end": 4441,
+                  "syncon": 120319,
+                  "ancestor": -1,
+                  "group_by": 5000000,
+                  "confidence": 1.0
+                },
+                {
+                  "text": "destro",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 9884,
+                  "len": 6,
+                  "snt": 169,
+                  "snt_begin": 9863,
+                  "snt_end": 9909,
+                  "syncon": 120319,
+                  "ancestor": -1,
+                  "group_by": 21000000,
+                  "confidence": 1.0
+                },
+                {
+                  "text": "destro",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 14983,
+                  "len": 6,
+                  "snt": 240,
+                  "snt_begin": 14962,
+                  "snt_end": 15008,
+                  "syncon": 120319,
+                  "ancestor": -1,
+                  "group_by": 26000000,
+                  "confidence": 1.0
+                }
+              ],
+              "confidence": 1.0
+            }
+          ],
+          "instances": 3
+        },
+        {
+          "template": "parti_corpo",
+          "fields": [
+            {
+              "field": "parte_corpo",
+              "value": "spalla",
+              "instance": [
+                {
+                  "text": "spalla",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 4428,
+                  "len": 6,
+                  "snt": 79,
+                  "snt_begin": 4401,
+                  "snt_end": 4441,
+                  "syncon": 100016363,
+                  "ancestor": -1,
+                  "group_by": 5010000,
+                  "confidence": 1.0
+                }
+              ],
+              "confidence": 1.0
+            }
+          ],
+          "instances": 1
+        },
+        {
+          "template": "parti_corpo",
+          "fields": [
+            {
+              "field": "parte_corpo",
+              "value": "ramo",
+              "instance": [
+                {
+                  "text": "ramo",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 5433,
+                  "len": 4,
+                  "snt": 94,
+                  "snt_begin": 5380,
+                  "snt_end": 5491,
+                  "syncon": 214319,
+                  "ancestor": -1,
+                  "group_by": 8000000,
+                  "confidence": 1.0
+                }
+              ],
+              "confidence": 1.0
+            }
+          ],
+          "instances": 1
+        },
+        {
+          "template": "parti_corpo",
+          "fields": [
+            {
+              "field": "parte_corpo",
+              "value": "bulbo",
+              "instance": [
+                {
+                  "text": "bulbo",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 6206,
+                  "len": 5,
+                  "snt": 104,
+                  "snt_begin": 6190,
+                  "snt_end": 6242,
+                  "syncon": 5589,
+                  "ancestor": -1,
+                  "group_by": 11000000,
+                  "confidence": 1.0
+                }
+              ],
+              "confidence": 1.0
+            }
+          ],
+          "instances": 1
+        },
+        {
+          "template": "parti_corpo",
+          "fields": [
+            {
+              "field": "parte_corpo",
+              "value": "radice",
+              "instance": [
+                {
+                  "text": "radice",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 6220,
+                  "len": 6,
+                  "snt": 104,
+                  "snt_begin": 6190,
+                  "snt_end": 6242,
+                  "syncon": 100111029,
+                  "ancestor": -1,
+                  "group_by": 11010000,
+                  "confidence": 1.0
+                }
+              ],
+              "confidence": 1.0
+            }
+          ],
+          "instances": 1
+        },
+        {
+          "template": "parti_corpo",
+          "fields": [
+            {
+              "field": "parte_corpo",
+              "value": "polso",
+              "instance": [
+                {
+                  "text": "Polsi",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 6497,
+                  "len": 5,
+                  "snt": 111,
+                  "snt_begin": 6497,
+                  "snt_end": 6542,
+                  "syncon": 29011,
+                  "ancestor": -1,
+                  "group_by": 12000000,
+                  "confidence": 1.0
+                }
+              ],
+              "confidence": 1.0
+            }
+          ],
+          "instances": 1
+        },
+        {
+          "template": "parti_corpo",
+          "fields": [
+            {
+              "field": "parte_corpo",
+              "value": "ilo",
+              "instance": [
+                {
+                  "text": "ilo",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 7052,
+                  "len": 3,
+                  "snt": 124,
+                  "snt_begin": 7015,
+                  "snt_end": 7103,
+                  "syncon": 104131640,
+                  "ancestor": -1,
+                  "group_by": 14000000,
+                  "confidence": 1.0
+                }
+              ],
+              "confidence": 1.0
+            }
+          ],
+          "instances": 1
+        },
+        {
+          "template": "parti_corpo",
+          "fields": [
+            {
+              "field": "parte_corpo",
+              "value": "mitocondrio",
+              "instance": [
+                {
+                  "text": "mitocondri",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 8041,
+                  "len": 10,
+                  "snt": 140,
+                  "snt_begin": 7990,
+                  "snt_end": 8099,
+                  "syncon": 100039572,
+                  "ancestor": -1,
+                  "group_by": 15000000,
+                  "confidence": 1.0
+                }
+              ],
+              "confidence": 1.0
+            }
+          ],
+          "instances": 1
+        },
+        {
+          "template": "parti_corpo",
+          "fields": [
+            {
+              "field": "parte_corpo",
+              "value": "muscolo",
+              "instance": [
+                {
+                  "text": "muscolo",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 8080,
+                  "len": 7,
+                  "snt": 140,
+                  "snt_begin": 7990,
+                  "snt_end": 8099,
+                  "syncon": 100007365,
+                  "ancestor": -1,
+                  "group_by": 15010000,
+                  "confidence": 1.0
+                }
+              ],
+              "confidence": 1.0
+            }
+          ],
+          "instances": 1
+        },
+        {
+          "template": "parti_corpo",
+          "fields": [
+            {
+              "field": "parte_corpo",
+              "value": "gene",
+              "instance": [
+                {
+                  "text": "gene",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 8382,
+                  "len": 4,
+                  "snt": 144,
+                  "snt_begin": 8360,
+                  "snt_end": 8464,
+                  "syncon": 100007187,
+                  "ancestor": -1,
+                  "group_by": 16000000,
+                  "confidence": 1.0
+                },
+                {
+                  "text": "gene",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 8449,
+                  "len": 4,
+                  "snt": 144,
+                  "snt_begin": 8360,
+                  "snt_end": 8464,
+                  "syncon": 100007187,
+                  "ancestor": -1,
+                  "group_by": 16010000,
+                  "confidence": 1.0
+                },
+                {
+                  "text": "gene",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 8519,
+                  "len": 4,
+                  "snt": 145,
+                  "snt_begin": 8466,
+                  "snt_end": 8565,
+                  "syncon": 100007187,
+                  "ancestor": -1,
+                  "group_by": 17000000,
+                  "confidence": 1.0
+                },
+                {
+                  "text": "gene",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 8567,
+                  "len": 4,
+                  "snt": 146,
+                  "snt_begin": 8567,
+                  "snt_end": 8667,
+                  "syncon": 100007187,
+                  "ancestor": -1,
+                  "group_by": 18000000,
+                  "confidence": 1.0
+                },
+                {
+                  "text": "gene",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 8664,
+                  "len": 4,
+                  "snt": 146,
+                  "snt_begin": 8567,
+                  "snt_end": 8667,
+                  "syncon": 100007187,
+                  "ancestor": -1,
+                  "group_by": 18010000,
+                  "confidence": 1.0
+                }
+              ],
+              "confidence": 1.0
+            }
+          ],
+          "instances": 5
+        },
+        {
+          "template": "parti_corpo",
+          "fields": [
+            {
+              "field": "parte_corpo",
+              "value": "setto interventricolare",
+              "instance": [
+                {
+                  "text": "setto interventricolare",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 9359,
+                  "len": 23,
+                  "snt": 159,
+                  "snt_begin": 9294,
+                  "snt_end": 9397,
+                  "syncon": 37502,
+                  "ancestor": -1,
+                  "group_by": 19000000,
+                  "confidence": 1.0
+                },
+                {
+                  "text": "setto interventricolare",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 17841,
+                  "len": 23,
+                  "snt": 287,
+                  "snt_begin": 17805,
+                  "snt_end": 17906,
+                  "syncon": 37502,
+                  "ancestor": -1,
+                  "group_by": 33000000,
+                  "confidence": 1.0
+                }
+              ],
+              "confidence": 1.0
+            }
+          ],
+          "instances": 2
+        },
+        {
+          "template": "parti_corpo",
+          "fields": [
+            {
+              "field": "parte_corpo",
+              "value": "bulbo aortico",
+              "instance": [
+                {
+                  "text": "bulbo aortico",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 9657,
+                  "len": 13,
+                  "snt": 165,
+                  "snt_begin": 9641,
+                  "snt_end": 9717,
+                  "syncon": 299541,
+                  "ancestor": -1,
+                  "group_by": 20000000,
+                  "confidence": 1.0
+                },
+                {
+                  "text": "bulbo aortico",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 18097,
+                  "len": 13,
+                  "snt": 291,
+                  "snt_begin": 18081,
+                  "snt_end": 18119,
+                  "syncon": 299541,
+                  "ancestor": -1,
+                  "group_by": 34000000,
+                  "confidence": 1.0
+                }
+              ],
+              "confidence": 1.0
+            }
+          ],
+          "instances": 2
+        },
+        {
+          "template": "parti_corpo",
+          "fields": [
+            {
+              "field": "parte_corpo",
+              "value": "valvola",
+              "instance": [
+                {
+                  "text": "Valvola",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 10697,
+                  "len": 7,
+                  "snt": 181,
+                  "snt_begin": 10685,
+                  "snt_end": 10715,
+                  "syncon": 8444,
+                  "ancestor": -1,
+                  "group_by": 22000000,
+                  "confidence": 1.0
+                }
+              ],
+              "confidence": 1.0
+            }
+          ],
+          "instances": 1
+        },
+        {
+          "template": "parti_corpo",
+          "fields": [
+            {
+              "field": "parte_corpo",
+              "value": "lingula",
+              "instance": [
+                {
+                  "text": "lingula",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 11001,
+                  "len": 7,
+                  "snt": 186,
+                  "snt_begin": 11001,
+                  "snt_end": 11106,
+                  "syncon": 25952,
+                  "ancestor": -1,
+                  "group_by": 23000000,
+                  "confidence": 1.0
+                },
+                {
+                  "text": "lingula",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 14953,
+                  "len": 7,
+                  "snt": 239,
+                  "snt_begin": 14859,
+                  "snt_end": 14960,
+                  "syncon": 25952,
+                  "ancestor": -1,
+                  "group_by": 25010000,
+                  "confidence": 1.0
+                }
+              ],
+              "confidence": 1.0
+            }
+          ],
+          "instances": 2
+        },
+        {
+          "template": "parti_corpo",
+          "fields": [
+            {
+              "field": "parte_corpo",
+              "value": "cavo",
+              "instance": [
+                {
+                  "text": "cavo",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 13713,
+                  "len": 4,
+                  "snt": 222,
+                  "snt_begin": 13629,
+                  "snt_end": 13736,
+                  "syncon": 444852,
+                  "ancestor": -1,
+                  "group_by": 24000000,
+                  "confidence": 1.0
+                }
+              ],
+              "confidence": 1.0
+            }
+          ],
+          "instances": 1
+        },
+        {
+          "template": "parti_corpo",
+          "fields": [
+            {
+              "field": "parte_corpo",
+              "value": "polmone",
+              "instance": [
+                {
+                  "text": "polmone",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 14888,
+                  "len": 7,
+                  "snt": 239,
+                  "snt_begin": 14859,
+                  "snt_end": 14960,
+                  "syncon": 100007886,
+                  "ancestor": -1,
+                  "group_by": 25000000,
+                  "confidence": 1.0
+                },
+                {
+                  "text": "polmone",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 16636,
+                  "len": 7,
+                  "snt": 266,
+                  "snt_begin": 16636,
+                  "snt_end": 16711,
+                  "syncon": 100007886,
+                  "ancestor": -1,
+                  "group_by": 31000000,
+                  "confidence": 1.0
+                },
+                {
+                  "text": "polmone",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 16793,
+                  "len": 7,
+                  "snt": 268,
+                  "snt_begin": 16728,
+                  "snt_end": 16824,
+                  "syncon": 100007886,
+                  "ancestor": -1,
+                  "group_by": 32000000,
+                  "confidence": 1.0
+                }
+              ],
+              "confidence": 1.0
+            }
+          ],
+          "instances": 3
+        },
+        {
+          "template": "parti_corpo",
+          "fields": [
+            {
+              "field": "parte_corpo",
+              "value": "strato",
+              "instance": [
+                {
+                  "text": "strati",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 15469,
+                  "len": 6,
+                  "snt": 246,
+                  "snt_begin": 15439,
+                  "snt_end": 15482,
+                  "syncon": 8334,
+                  "ancestor": -1,
+                  "group_by": 28000000,
+                  "confidence": 1.0
+                }
+              ],
+              "confidence": 1.0
+            }
+          ],
+          "instances": 1
+        },
+        {
+          "template": "parti_corpo",
+          "fields": [
+            {
+              "field": "parte_corpo",
+              "value": "mento",
+              "instance": [
+                {
+                  "text": "mento",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 15771,
+                  "len": 5,
+                  "snt": 251,
+                  "snt_begin": 15695,
+                  "snt_end": 15793,
+                  "syncon": 100082714,
+                  "ancestor": -1,
+                  "group_by": 29000000,
+                  "confidence": 1.0
+                }
+              ],
+              "confidence": 1.0
+            }
+          ],
+          "instances": 1
+        },
+        {
+          "template": "parti_corpo",
+          "fields": [
+            {
+              "field": "parte_corpo",
+              "value": "cuore",
+              "instance": [
+                {
+                  "text": "CUORE",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 15949,
+                  "len": 5,
+                  "snt": 255,
+                  "snt_begin": 15949,
+                  "snt_end": 16046,
+                  "syncon": 100001072,
+                  "ancestor": -1,
+                  "group_by": 30000000,
+                  "confidence": 1.0
+                }
+              ],
+              "confidence": 1.0
+            }
+          ],
+          "instances": 1
+        },
+        {
+          "template": "parti_corpo",
+          "fields": [
+            {
+              "field": "parte_corpo",
+              "value": "tronco",
+              "instance": [
+                {
+                  "text": "tronco",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 15977,
+                  "len": 6,
+                  "snt": 255,
+                  "snt_begin": 15949,
+                  "snt_end": 16046,
+                  "syncon": 172896,
+                  "ancestor": -1,
+                  "group_by": 30010000,
+                  "confidence": 1.0
+                }
+              ],
+              "confidence": 1.0
+            }
+          ],
+          "instances": 1
+        },
+        {
+          "template": "parti_corpo",
+          "fields": [
+            {
+              "field": "parte_corpo",
+              "value": "branca",
+              "instance": [
+                {
+                  "text": "branca",
+                  "rule_details": [
+                    {
+                      "id": 0,
+                      "label": ""
+                    }
+                  ],
+                  "pos": 18555,
+                  "len": 6,
+                  "snt": 299,
+                  "snt_begin": 18502,
+                  "snt_end": 18579,
+                  "syncon": 74916,
+                  "ancestor": -1,
+                  "group_by": 36000000,
+                  "confidence": 1.0
+                }
+              ],
+              "confidence": 1.0
+            }
+          ],
+          "instances": 1
+        }
+      ],
+      "tagger": []
+    },
+    "checksum": "0104df63"
+  },
+  "script_info": {},
+  "jr_output": "",
+  "properties": {
+    "ANNOTATIONS_MD5": ""
+  },
+  "namespace": {
+    "categories": [
+      {
+        "id": "dom1",
+        "label": ""
+      },
+      {
+        "id": "dom2",
+        "label": ""
+      },
+      {
+        "id": "dom3",
+        "label": ""
+      }
+    ],
+    "extractions": [
+      {
+        "template": "parti_corpo",
+        "fields": [
+          {
+            "name": "parte_corpo"
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "name": "BODY",
+        "score": 1,
+        "standard": true
+      }
+    ],
+    "segments": [
+      {
+        "name": "SEGMENT1",
+        "boost": 1.0
+      },
+      {
+        "name": "SEGMENT2",
+        "boost": 1.0
+      }
+    ]
+  }
+}

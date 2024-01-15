@@ -39,14 +39,14 @@ const LoadFile = () => {
             description: file.name,
         });
 
-        // await dispatch(setPlatformOutput(dummyOutput))
-        await dispatch(setPlatformOutput(dummyOutputFarmaci))
+        await dispatch(setPlatformOutput(dummyOutput))
+        // await dispatch(setPlatformOutput(dummyOutputFarmaci))
         
         console.log("date", dummyDateExtractionOutput)
         await dispatch(setDateExtractionOutput(dummyDateExtractionOutput))
         // const platformOutput = dummyOutput
-        // await processPlatformOutput(dummyOutput);
-        await processPlatformOutput(dummyOutputFarmaci);
+        await processPlatformOutput(dummyOutput);
+        // await processPlatformOutput(dummyOutputFarmaci);
         // dispatch(setProcessedPlatformOutput(dummyProcessedPlatformOutput))
       };
       reader.readAsText(file);

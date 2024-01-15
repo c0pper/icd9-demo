@@ -25,8 +25,8 @@ def create_doc_list(text_list):
         'icd9': i['icd9'], 
         'hierarchy': i['hierarchy'], 
         'label': i['label'], 
-        'paragraph_start': i['paragraph_start'],
-        'paragraph_end': i['paragraph_end']
+        'paragraph_start': i['extract_start'],
+        'paragraph_end': i['extract_end']
     }) for i in text_list]
 
 

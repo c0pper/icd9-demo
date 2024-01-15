@@ -17,7 +17,43 @@ client = OpenAI(
 )
 
 
+def ask_chatGPT_map_bodyparts(output_body_parts):
+    prompt = f"""
+### Instructions
+Map each of the following body parts to the CLOSEST relevant element from the supported body parts list and use exclusively parts from the supported body parts list:
+{output_body_parts}
 
+### Example
+{{"torace": "chest", "encefalo": "head", ...}}
+
+### Answer:
+"""
+    print("\n\n******** " + prompt)
+
+    response = client.chat.completions.create(
+        seed=69420,
+        model=model,
+        messages=[
+            {
+                "role": "system",
+                "content": "Always reply with valid json. You will map the provided body parts to their closest body part in this supported body parts list: [head, chest, stomach, left_shoulder, left_arm,	left_hand, right_shoulder, left_leg_lower, right_arm, right_hand, left_leg_upper, left_foot, right_leg_upper, right_leg_lower, right_foot]."
+            },
+            {
+                "role": "user",
+                "content": prompt,
+            }
+        ],
+    )
+
+    response_text = response.choices[0].message.content
+    full_response = {}
+    full_response["status"] = True
+    full_response["content"] = response_text
+    full_response["source"] = "gpt-api"
+    full_response["prompt"] = prompt,
+    # full_response["gpt_response"] = response
+
+    return full_response
 
 
 def ask_chatGPT(retriever, instruction, k):

@@ -8,7 +8,8 @@ import QuestionArea from '@/components/QuestionArea/QuestionArea';
 import { useSelector } from 'react-redux'
 // import 'dotenv/config'
 import MainSentences from '@/components/MainSentences/MainSentences';
-import Topics from '@/components/Topics/Topics';
+// import Topics from '@/components/Topics/Topics';
+import BodyParts from '@/components/BodyParts/BodyParts';
 import {
   Tabs,
   TabsContent,
@@ -43,7 +44,8 @@ function App() {
                         <TabsList className="grid w-full grid-cols-3">
                           <TabsTrigger value="icd9-concepts">ICD9 Concepts</TabsTrigger>
                           <TabsTrigger value="main-sentences">Main Sentences</TabsTrigger>
-                          <TabsTrigger value="topics">Topics</TabsTrigger>
+                          <TabsTrigger value="body-parts">Body Parts</TabsTrigger>
+                          {/* <TabsTrigger value="topics">Topics</TabsTrigger> */}
                         </TabsList>
                         <TabsContent value="icd9-concepts">
                           <EntitiesDisplay processedPlatformOutput={processedPlatformOutput} />
@@ -51,8 +53,8 @@ function App() {
                         <TabsContent value="main-sentences">
                           <MainSentences />
                         </TabsContent>
-                        <TabsContent value="topics">
-                          <Topics />
+                        <TabsContent value="body-parts">
+                          <BodyParts />
                         </TabsContent>
                       </Tabs>
                       <QuestionArea />

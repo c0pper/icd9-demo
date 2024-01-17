@@ -94,10 +94,10 @@ const QuestionArea = () => {
         "hierarchy": source.metadata.hierarchy,
         "icd9": source.metadata.icd9,
         "label": source.metadata.label,
-        "paragraph_end": source.metadata.paragraph_start,
-        "paragraph_start":source.metadata.paragraph_end
+        "extract_start": source.metadata.extract_start,
+        "extract_end":source.metadata.extract_end
       }));
-      dispatch(setTextHighlighting({ start: source.metadata.paragraph_start, end: source.metadata.paragraph_end }));
+      dispatch(setTextHighlighting({ start: source.metadata.extract_start, end: source.metadata.extract_end }));
   }
   
   const {

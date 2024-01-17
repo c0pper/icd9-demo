@@ -870,17 +870,33 @@
         {
             "icd9": "e87.10",
             "hierarchy": "ICD9CM Taxonomy/stato dei recettori degli estrogeni/corpo estraneo lasciato nel corpo durante una procedura/intervento chirurgico",
-            "extract": "All'anamnesi patologia remota, oltre agli interventi emersi nel ricovero in Neurochirurgia, emergeva che la paziente nel 2000 aveva subito un aborto seguito da ricovero ma negava fosse stato eseguito raschiamento; nel 2001 era stata sottoposta ad intervento chirurgico di asportazione di fibroma uterino; dal 5.3.07 al 14.3.07 era stata ricoverata presso l'U.O. Complessa di Chirurgia dell'Ospedale di Gubbio con diagnosi di esiti di pelviperitonite di origine annessiale bilaterale con cisti ematiche, grave sindrome aderenziale coartante il sigma, diverticolosi non complicata. Il 7.3.07 era stata sottoposta ad intervento chirurgico di resezione cuneiforme ovaio sinistro, lisi aderenze pelviche.",
-            "extract_start": 4994,
-            "extract_end": 5693,
+            "extract": "N\u00b0 18/2008 - Sinistro Ospedali Riuniti/Di Nunzio Cristina Fase istruttoria peritale medico legale Sintesi della Documentazione Sanitaria dell'Azienda: (Cartella Clinica n. 453.2007 U.O. Clinica di Neurochirurgia relativa al ricovero dal 4.09.07 al 15.09.07) Di Nunzio Cristina di anni 49 all'epoca dei fatti, in data 4.09.07 veniva ricoverata presso il reparto di Neurochirurgia dell'Azienda \"Ospedali Riuniti\" di Ancona per ernia discale D10-D11;il ricovero era stato programmato per l'esecuzione di intervento chirurgico di asportazione di disco intervertebrale. In anamnesi non emergevano notizie rilevanti in merito alla patologia patita.",
+            "extract_start": 0,
+            "extract_end": 642,
             "label": "intervento chirurgico"
         },
         {
             "icd9": "e87.10",
             "hierarchy": "ICD9CM Taxonomy/stato dei recettori degli estrogeni/corpo estraneo lasciato nel corpo durante una procedura/intervento chirurgico",
-            "extract": "Principali rischi e/o complicanze Deficit neurologico motorio e/o sensitivo- irritabilit\u00e0- infezione - fistola liquorale- dolore persistente locale e/o radicolare.\"); Il 6.09.07 la paziente era sottoposta ad intervento chirurgico di laminectomia decompressiva D10-D11 (non \u00e8 presente verbale di intervento). Il 7.09.07 la paziente aveva addome globoso e dolente spontaneamente con peristalsi torbida; erano eseguiti in urgenza: consulenza chirurgica (ore 11:30) che rilevava addome modicamente disteso e meteorico ma nel complesso trattabile, dolente alla palpazione in fossa iliaca sinistra.",
-            "extract_start": 2794,
-            "extract_end": 3386,
+            "extract": "All'anamnesi patologica remota si segnalavano pregressi interventi di appendicectomia (a 19 aa), plurimi interventi per otite cronica media; diagnosi di diabete mellito da 5-6 aa, prolasso valvolare mitralico, intervento in artroscopia per frattura rotulea sx ed intervento chirurgico per peritonite nel marzo 2007. La paziente riferiva allergia allo Iodio.",
+            "extract_start": 643,
+            "extract_end": 1000,
+            "label": "intervento chirurgico"
+        },
+        {
+            "icd9": "648.2",
+            "hierarchy": "ICD9CM Taxonomy/altre manifestazioni morbose in atto della madre classificate altrove, ma complicanti la gravidanza, il parto o il puerperio/anemia",
+            "extract": "Sul diario infermieristico si annotava che la paziente era diabetica in trattamento farmacologico e portatrice sana di anemia mediterranea. La paziente ed il medico anestesista firmavano il modulo di dichiarazione di avvenuta informazione e consenso all'anestesia.",
+            "extract_start": 1898,
+            "extract_end": 2162,
+            "label": "anemia"
+        },
+        {
+            "icd9": "e87.10",
+            "hierarchy": "ICD9CM Taxonomy/stato dei recettori degli estrogeni/corpo estraneo lasciato nel corpo durante una procedura/intervento chirurgico",
+            "extract": "Il 5.09.07 la paziente ed il medico Dott. Dobran firmavano modulo di informazione e consenso per l'esecuzione di intervento di laminectomia dorsale (\"\u2026Di Nunzio Cristina\u2026conferma di avere avuto chiara ed esauriente informazione relativa all'intervento chirurgico che gli \u00e8 stato proposto. Dichiara di aver ben compreso le motivazioni, le finalit\u00e0 e le caratteristiche dell'intervento, unitamente ai possibili rischi e complicanze ad esso relativi.",
+            "extract_start": 2163,
+            "extract_end": 2610,
             "label": "intervento chirurgico"
         },
         {
@@ -894,33 +910,57 @@
         {
             "icd9": "e87.10",
             "hierarchy": "ICD9CM Taxonomy/stato dei recettori degli estrogeni/corpo estraneo lasciato nel corpo durante una procedura/intervento chirurgico",
-            "extract": "Il 5.09.07 la paziente ed il medico Dott. Dobran firmavano modulo di informazione e consenso per l'esecuzione di intervento di laminectomia dorsale (\"\u2026Di Nunzio Cristina\u2026conferma di avere avuto chiara ed esauriente informazione relativa all'intervento chirurgico che gli \u00e8 stato proposto. Dichiara di aver ben compreso le motivazioni, le finalit\u00e0 e le caratteristiche dell'intervento, unitamente ai possibili rischi e complicanze ad esso relativi.",
-            "extract_start": 2163,
-            "extract_end": 2610,
+            "extract": "Principali rischi e/o complicanze Deficit neurologico motorio e/o sensitivo- irritabilit\u00e0- infezione - fistola liquorale- dolore persistente locale e/o radicolare.\"); Il 6.09.07 la paziente era sottoposta ad intervento chirurgico di laminectomia decompressiva D10-D11 (non \u00e8 presente verbale di intervento). Il 7.09.07 la paziente aveva addome globoso e dolente spontaneamente con peristalsi torbida; erano eseguiti in urgenza: consulenza chirurgica (ore 11:30) che rilevava addome modicamente disteso e meteorico ma nel complesso trattabile, dolente alla palpazione in fossa iliaca sinistra.",
+            "extract_start": 2794,
+            "extract_end": 3386,
+            "label": "intervento chirurgico"
+        },
+        {
+            "icd9": "527.4",
+            "hierarchy": "ICD9CM Taxonomy/malattie delle ghiandole salivari/fistola",
+            "extract": "Principali rischi e/o complicanze Deficit neurologico motorio e/o sensitivo- irritabilit\u00e0- infezione - fistola liquorale- dolore persistente locale e/o radicolare.\"); Il 6.09.07 la paziente era sottoposta ad intervento chirurgico di laminectomia decompressiva D10-D11 (non \u00e8 presente verbale di intervento).",
+            "extract_start": 2794,
+            "extract_end": 3101,
+            "label": "fistola"
+        },
+        {
+            "icd9": "94.49",
+            "hierarchy": "ICD9 Procedure Taxonomy/procedure relative alla psiche/altra psicoterapia e consulenze/altra consulenza",
+            "extract": "Alle ore 20:50 era eseguita altra consulenza chirurgica che rilevava quadro sostanzialmente invariato e consigliava di proseguire la terapia antibiotica unitamente a 500 cc di liquidi. L'8.09.07 la temperatura era pari a 37\u00b0 C e la paziente riferiva dolenza addominale.",
+            "extract_start": 3990,
+            "extract_end": 4259,
+            "label": "altra consulenza"
+        },
+        {
+            "icd9": "e87.10",
+            "hierarchy": "ICD9CM Taxonomy/stato dei recettori degli estrogeni/corpo estraneo lasciato nel corpo durante una procedura/intervento chirurgico",
+            "extract": "All'anamnesi patologia remota, oltre agli interventi emersi nel ricovero in Neurochirurgia, emergeva che la paziente nel 2000 aveva subito un aborto seguito da ricovero ma negava fosse stato eseguito raschiamento; nel 2001 era stata sottoposta ad intervento chirurgico di asportazione di fibroma uterino; dal 5.3.07 al 14.3.07 era stata ricoverata presso l'U.O. Complessa di Chirurgia dell'Ospedale di Gubbio con diagnosi di esiti di pelviperitonite di origine annessiale bilaterale con cisti ematiche, grave sindrome aderenziale coartante il sigma, diverticolosi non complicata. Il 7.3.07 era stata sottoposta ad intervento chirurgico di resezione cuneiforme ovaio sinistro, lisi aderenze pelviche.",
+            "extract_start": 4994,
+            "extract_end": 5693,
             "label": "intervento chirurgico"
         },
         {
             "icd9": "e87.10",
             "hierarchy": "ICD9CM Taxonomy/stato dei recettori degli estrogeni/corpo estraneo lasciato nel corpo durante una procedura/intervento chirurgico",
-            "extract": "All'anamnesi patologica remota si segnalavano pregressi interventi di appendicectomia (a 19 aa), plurimi interventi per otite cronica media; diagnosi di diabete mellito da 5-6 aa, prolasso valvolare mitralico, intervento in artroscopia per frattura rotulea sx ed intervento chirurgico per peritonite nel marzo 2007. La paziente riferiva allergia allo Iodio.",
-            "extract_start": 643,
-            "extract_end": 1000,
+            "extract": "Il 7.3.07 era stata sottoposta ad intervento chirurgico di resezione cuneiforme ovaio sinistro, lisi aderenze pelviche. Una RM del 4.5.07 (Diagnostica per immagini Servizio Radiologia Citt\u00e0 di Castello) rilevava a livello D10-D11 grossolana protrusione discale posteriore mediana che comprimeva la corrispondenti strutture nervose, ipertrofia dei legamenti gialli corrispondenti con riduzione delle dimensioni del canale vertebrale, grossolane protrusioni discali in corrispondenza di D1-D2 e D2-D3.",
+            "extract_start": 5574,
+            "extract_end": 6073,
             "label": "intervento chirurgico"
+        },
+        {
+            "icd9": "527.1",
+            "hierarchy": "ICD9CM Taxonomy/malattie delle ghiandole salivari/ipertrofia",
+            "extract": "Una RM del 4.5.07 (Diagnostica per immagini Servizio Radiologia Citt\u00e0 di Castello) rilevava a livello D10-D11 grossolana protrusione discale posteriore mediana che comprimeva la corrispondenti strutture nervose, ipertrofia dei legamenti gialli corrispondenti con riduzione delle dimensioni del canale vertebrale, grossolane protrusioni discali in corrispondenza di D1-D2 e D2-D3. Il 9.11.07 visitata dai medici del reparto di Medicina del Dolore e Palliativa dell'Ospedale di Ancona, e le era stata consigliata terapia con contramal 20 gtt la sera + 20 gtt albisogno; lyrica 150mg 1 cp la sera che la signora assumeva per 10gg poi sospendeva.",
+            "extract_start": 5694,
+            "extract_end": 6336,
+            "label": "ipertrofia"
         },
         {
             "icd9": "e87.10",
             "hierarchy": "ICD9CM Taxonomy/stato dei recettori degli estrogeni/corpo estraneo lasciato nel corpo durante una procedura/intervento chirurgico",
-            "extract": "N\u00b0 18/2008 - Sinistro Ospedali Riuniti/Di Nunzio Cristina Fase istruttoria peritale medico legale Sintesi della Documentazione Sanitaria dell'Azienda: (Cartella Clinica n. 453.2007 U.O. Clinica di Neurochirurgia relativa al ricovero dal 4.09.07 al 15.09.07) Di Nunzio Cristina di anni 49 all'epoca dei fatti, in data 4.09.07 veniva ricoverata presso il reparto di Neurochirurgia dell'Azienda \"Ospedali Riuniti\" di Ancona per ernia discale D10-D11;il ricovero era stato programmato per l'esecuzione di intervento chirurgico di asportazione di disco intervertebrale. In anamnesi non emergevano notizie rilevanti in merito alla patologia patita.",
-            "extract_start": 0,
-            "extract_end": 642,
-            "label": "intervento chirurgico"
-        },
-        {
-            "icd9": "e87.00",
-            "hierarchy": "ICD9CM Taxonomy/stato dei recettori degli estrogeni/taglio, puntura, perforazione o emorragia accidentali durante cure mediche/intervento chirurgico",
-            "extract": "\u2026 Resto sorpreso che la Sig.ra Di Nunzio abbia avuto l'impressione di avere difficolt\u00e0 a contattarmi in quanto aveva la disponibilit\u00e0 del mio cellulare, era stata visitata pi\u00f9 volte dal sottoscritto dopo l'intervento chirurgico e la avevo personalmente accompagnata al reparto di Medicina del Dolore parlando con i medici per risolvere il problema in atto. Lo stesso Dr.",
-            "extract_start": 13684,
-            "extract_end": 14054,
+            "extract": "Una RM del 13.11.07 (Istituto Andrea Cesalpino Terontola AR) mostrava esiti di pregresso intervento chirurgico per stenosi segmentarla del canale vertebrale in D10-D11 complicata da grossolana protrusione discale posteriore mediana ad ampio raggio. Il 7.01.08 la paziente era molto agitata ed ansiosa lamentava persistenza dopo intervento chirurgico di laminectomia decompressiva D10-D11 di dolore al rachide dorso lombare che si irradiava all'addome a livello della fossa iliaca destra e sinistra ed alla gamba dx con contratture algiche associate.",
+            "extract_start": 6337,
+            "extract_end": 6886,
             "label": "intervento chirurgico"
         },
         {
@@ -937,6 +977,14 @@
             "extract": "Programma di trattamento riabilitativo in regime ambulatoriale datato11.01.08. Sintesi dell'istanza risarcitoria: la Sig.ra Di Nunzio era visitata il 19.07.2007 dal Dott. Dobran presso il proprio studio privato ed in tale occasione lo stesso consigliava l'immediato intervento chirurgico nonostante la paziente avesse chiesto di sottoporsi previamente a terapia del dolore, che da tempo l'affliggeva,limitandola nei movimenti della gamba destra. Dopo l'intervento, in data 15.09.07 la paziente era dimessa con consiglio di continuare terapia farmacologia per il dolore.",
             "extract_start": 7743,
             "extract_end": 8312,
+            "label": "intervento chirurgico"
+        },
+        {
+            "icd9": "e87.10",
+            "hierarchy": "ICD9CM Taxonomy/stato dei recettori degli estrogeni/corpo estraneo lasciato nel corpo durante una procedura/intervento chirurgico",
+            "extract": "Dopo l'intervento, in data 15.09.07 la paziente era dimessa con consiglio di continuare terapia farmacologia per il dolore. Fin da subito dopo l'intervento la sig.ra Di Nunzio riferiva \"mancanza di sensibilit\u00e0 della gamba e del piede destro, difficolt\u00e0 a camminare per blocco improvviso della gamba, mancanza di equilibrio, dolori all'addome inferiore, tanto che dopo aver saputo delle dimissioni chiedeva di potersi trattenere ancora qualche giorno in ospedale, ricevendo risposta negativa.",
+            "extract_start": 8189,
+            "extract_end": 8680,
             "label": "intervento chirurgico"
         },
         {
@@ -972,59 +1020,11 @@
             "label": "intervento chirurgico"
         },
         {
-            "icd9": "94.49",
-            "hierarchy": "ICD9 Procedure Taxonomy/procedure relative alla psiche/altra psicoterapia e consulenze/altra consulenza",
-            "extract": "Alle ore 20:50 era eseguita altra consulenza chirurgica che rilevava quadro sostanzialmente invariato e consigliava di proseguire la terapia antibiotica unitamente a 500 cc di liquidi. L'8.09.07 la temperatura era pari a 37\u00b0 C e la paziente riferiva dolenza addominale.",
-            "extract_start": 3990,
-            "extract_end": 4259,
-            "label": "altra consulenza"
-        },
-        {
             "icd9": "e87.20",
             "hierarchy": "ICD9CM Taxonomy/stato dei recettori degli estrogeni/fallimento delle precauzioni per garantire la sterilita' durante una procedura/intervento chirurgico",
             "extract": "Sintesi della relazione del referente: \u2026dopo un approfondito colloquio con la paziente e spiegando in dettaglio le modalit\u00e0 della procedura chirurgica, delle soluzioni alternative possibili ed i rischi/benefici dell'intervento stesso la paziente decideva di sottoporsi ad intervento neurochirurgico \u2026 in data 06.09.07\u2026. Seguiva decorso clinico regolare e in data 14.09.07 veniva dimessa con terapia farmacologica e consiglio di sottoporsi a visita neurochirurgia di controllo a distanza.",
             "extract_start": 12778,
             "extract_end": 13265,
-            "label": "intervento chirurgico"
-        },
-        {
-            "icd9": "648.2",
-            "hierarchy": "ICD9CM Taxonomy/altre manifestazioni morbose in atto della madre classificate altrove, ma complicanti la gravidanza, il parto o il puerperio/anemia",
-            "extract": "Sul diario infermieristico si annotava che la paziente era diabetica in trattamento farmacologico e portatrice sana di anemia mediterranea. La paziente ed il medico anestesista firmavano il modulo di dichiarazione di avvenuta informazione e consenso all'anestesia.",
-            "extract_start": 1898,
-            "extract_end": 2162,
-            "label": "anemia"
-        },
-        {
-            "icd9": "527.4",
-            "hierarchy": "ICD9CM Taxonomy/malattie delle ghiandole salivari/fistola",
-            "extract": "Principali rischi e/o complicanze Deficit neurologico motorio e/o sensitivo- irritabilit\u00e0- infezione - fistola liquorale- dolore persistente locale e/o radicolare.\"); Il 6.09.07 la paziente era sottoposta ad intervento chirurgico di laminectomia decompressiva D10-D11 (non \u00e8 presente verbale di intervento).",
-            "extract_start": 2794,
-            "extract_end": 3101,
-            "label": "fistola"
-        },
-        {
-            "icd9": "527.1",
-            "hierarchy": "ICD9CM Taxonomy/malattie delle ghiandole salivari/ipertrofia",
-            "extract": "Una RM del 4.5.07 (Diagnostica per immagini Servizio Radiologia Citt\u00e0 di Castello) rilevava a livello D10-D11 grossolana protrusione discale posteriore mediana che comprimeva la corrispondenti strutture nervose, ipertrofia dei legamenti gialli corrispondenti con riduzione delle dimensioni del canale vertebrale, grossolane protrusioni discali in corrispondenza di D1-D2 e D2-D3. Il 9.11.07 visitata dai medici del reparto di Medicina del Dolore e Palliativa dell'Ospedale di Ancona, e le era stata consigliata terapia con contramal 20 gtt la sera + 20 gtt albisogno; lyrica 150mg 1 cp la sera che la signora assumeva per 10gg poi sospendeva.",
-            "extract_start": 5694,
-            "extract_end": 6336,
-            "label": "ipertrofia"
-        },
-        {
-            "icd9": "e87.10",
-            "hierarchy": "ICD9CM Taxonomy/stato dei recettori degli estrogeni/corpo estraneo lasciato nel corpo durante una procedura/intervento chirurgico",
-            "extract": "Il 7.3.07 era stata sottoposta ad intervento chirurgico di resezione cuneiforme ovaio sinistro, lisi aderenze pelviche. Una RM del 4.5.07 (Diagnostica per immagini Servizio Radiologia Citt\u00e0 di Castello) rilevava a livello D10-D11 grossolana protrusione discale posteriore mediana che comprimeva la corrispondenti strutture nervose, ipertrofia dei legamenti gialli corrispondenti con riduzione delle dimensioni del canale vertebrale, grossolane protrusioni discali in corrispondenza di D1-D2 e D2-D3.",
-            "extract_start": 5574,
-            "extract_end": 6073,
-            "label": "intervento chirurgico"
-        },
-        {
-            "icd9": "e87.10",
-            "hierarchy": "ICD9CM Taxonomy/stato dei recettori degli estrogeni/corpo estraneo lasciato nel corpo durante una procedura/intervento chirurgico",
-            "extract": "Una RM del 13.11.07 (Istituto Andrea Cesalpino Terontola AR) mostrava esiti di pregresso intervento chirurgico per stenosi segmentarla del canale vertebrale in D10-D11 complicata da grossolana protrusione discale posteriore mediana ad ampio raggio. Il 7.01.08 la paziente era molto agitata ed ansiosa lamentava persistenza dopo intervento chirurgico di laminectomia decompressiva D10-D11 di dolore al rachide dorso lombare che si irradiava all'addome a livello della fossa iliaca destra e sinistra ed alla gamba dx con contratture algiche associate.",
-            "extract_start": 6337,
-            "extract_end": 6886,
             "label": "intervento chirurgico"
         },
         {
@@ -1036,11 +1036,11 @@
             "label": "terapia farmacologica"
         },
         {
-            "icd9": "e87.10",
-            "hierarchy": "ICD9CM Taxonomy/stato dei recettori degli estrogeni/corpo estraneo lasciato nel corpo durante una procedura/intervento chirurgico",
-            "extract": "Dopo l'intervento, in data 15.09.07 la paziente era dimessa con consiglio di continuare terapia farmacologia per il dolore. Fin da subito dopo l'intervento la sig.ra Di Nunzio riferiva \"mancanza di sensibilit\u00e0 della gamba e del piede destro, difficolt\u00e0 a camminare per blocco improvviso della gamba, mancanza di equilibrio, dolori all'addome inferiore, tanto che dopo aver saputo delle dimissioni chiedeva di potersi trattenere ancora qualche giorno in ospedale, ricevendo risposta negativa.",
-            "extract_start": 8189,
-            "extract_end": 8680,
+            "icd9": "e87.00",
+            "hierarchy": "ICD9CM Taxonomy/stato dei recettori degli estrogeni/taglio, puntura, perforazione o emorragia accidentali durante cure mediche/intervento chirurgico",
+            "extract": "\u2026 Resto sorpreso che la Sig.ra Di Nunzio abbia avuto l'impressione di avere difficolt\u00e0 a contattarmi in quanto aveva la disponibilit\u00e0 del mio cellulare, era stata visitata pi\u00f9 volte dal sottoscritto dopo l'intervento chirurgico e la avevo personalmente accompagnata al reparto di Medicina del Dolore parlando con i medici per risolvere il problema in atto. Lo stesso Dr.",
+            "extract_start": 13684,
+            "extract_end": 14054,
             "label": "intervento chirurgico"
         }
     ],

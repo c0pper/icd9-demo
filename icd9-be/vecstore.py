@@ -21,13 +21,14 @@ def create_retriever(docs, vs_identifier, embedding_function=OpenAIEmbeddings())
     return db
 
 def create_doc_list(text_list):
-    return [Document(page_content=i["extract"], metadata={
+    doc_list = [Document(page_content=i["extract"], metadata={
         'icd9': i['icd9'], 
         'hierarchy': i['hierarchy'], 
         'label': i['label'], 
-        'paragraph_start': i['extract_start'],
-        'paragraph_end': i['extract_end']
+        'extract_start': i['extract_start'],
+        'extract_end': i['extract_end']
     }) for i in text_list]
+    return doc_list
 
 
 

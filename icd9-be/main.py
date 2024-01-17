@@ -6,7 +6,11 @@ import json
 from dateutil import parser
 import os
 import re
+import requests
+from dotenv import load_dotenv
+from time import sleep
 
+load_dotenv()
 
 app = Flask(__name__)
 CORS(app)
@@ -40,7 +44,8 @@ def get_timeline_dates():
         return jsonify({"error": "Missing 'text' in the request payload"}), 400
     
     print("Getting timeline dates\n-----------------------------")
-    response = gpt.ask_chatGPT_dates(text)["content"]
+    full_response = gpt.ask_chatGPT_dates(text)
+    response = full_response["content"]
     # response = """'- Ricovero del 4.09.07 al 15.09.07 per intervento chirurgico di asportazione di disco intervertebrale - Settembre 2007\n- Ricovero dal 07.01.08 al 12.01.08 presso la SOD Medicina del Dolore e Palliativa a causa di radicolopatia all\'arto inferiore destro post-laminectomia - Gennaio 2008\n- Visita presso l\'U.O. di Neurochirurgia dell\'Ospedale di Bergamo per "indispensabile intenso trattamento fisioterapico" - 15 gennaio 2008'"""
 #     response = """
 # - Ricovero del 4.09.07 al 15.09.07 per intervento chirurgico di asportazione di disco intervertebrale
@@ -84,23 +89,12 @@ def get_timeline_dates():
 
     sorted_events_with_year = sorted(events_with_year, key=lambda x: x['year'])
 
+    print(f"prompt\n{full_response['prompt']}\n")
     print(f"repsonse\n{response}\n")
     print(f"w/year\n{sorted_events_with_year}\n")
     print(f"no/year\n{events_no_year}\n")
 
     return jsonify({"events_with_year": sorted_events_with_year, "events_no_year": events_no_year})
-
-
-@app.route('/api/process_platform_output', methods=['POST'])
-def process_platform_output_route():
-    platform_out = request.json.get('platform_out')
-    
-    if not platform_out:
-        return jsonify({"error": "Missing 'platform_out' in the request payload"}), 400
-    
-    print("Processing platform output")
-    full_processed = process_platform_output(platform_out)
-    return jsonify(full_processed)
 
 
 @app.route('/api/process_body_parts', methods=['POST'])
@@ -137,6 +131,51 @@ def map_body_parts_to_body():
     except json.decoder.JSONDecodeError as e:
         print(f"Error: {e}")
         return jsonify({"error": e})
+
+
+@app.route('/api/get_platform_output', methods=['POST'])
+def get_platform_output():
+    request_body = request.json.get("body")
+    external_api_url = "https://playground.expertcloud.ai/api/v1/runtime/workflow/f36676cb-41a7-4789-8dac-35d5af220974/task"
+    headers = {
+        "Content-Type": "application/json",
+        "X-API-KEY": os.getenv("WORKFLOW_APIKEY")
+    }
+
+    try:
+        create_job = requests.post(external_api_url, json=request_body, headers=headers)
+        create_job.raise_for_status()
+        taskId = json.loads(create_job.content)["taskId"]
+
+        status = "SUBMITTED"
+        while status not in ["COMPLETED", "ERROR"]:
+            print(f"status {status}, sleeping and retrying for status")
+            sleep(2)
+            status_req = requests.get(f"https://playground.expertcloud.ai/api/v1/runtime/workflow/f36676cb-41a7-4789-8dac-35d5af220974/task/{taskId}/status", headers=headers)
+            status = json.loads(status_req.content)["status"]
+
+        print(f"status {status}, proceeding")
+        response = requests.get(f"https://playground.expertcloud.ai/api/v1/runtime/workflow/f36676cb-41a7-4789-8dac-35d5af220974/task/{taskId}/response", headers=headers)
+        response = json.loads(response.content)
+        print(response)
+        return jsonify(response)
+    
+    except requests.RequestException as e:
+        return jsonify({"error": f"Failed to make the external API request: {e}"}), 500
+
+
+
+@app.route('/api/process_platform_output', methods=['POST'])
+def process_platform_output_route():
+    platform_out = request.json.get('platform_out')
+    
+    if not platform_out:
+        return jsonify({"error": "Missing 'platform_out' in the request payload"}), 400
+    
+    print("Processing platform output")
+    full_processed = process_platform_output(platform_out)
+    return jsonify(full_processed)
+    
 
 
 

@@ -154,38 +154,6 @@ def process_platform_output(platform_out):
                             else:
                                 sentence, sentence_start, sentence_end = enrich_paragraph_or_sentence(t, platform_out, "sentence")
                                 extraction_sentences.append(sentence)
-                            # #Individuazione paragraph
-                            # paragraph_idx = t["paragraph"]
-                            # paragraph_start = paragraphs[paragraph_idx]["start"]
-                            # paragraph_end = paragraphs[paragraph_idx]["end"]
-                            # paragraph = text[paragraph_start:paragraph_end]
-
-                            # # Arricchimento paragraph con testo precedente fino al punto/accapo
-                            # prev_text_reversed = []
-                            # reversed_prev_text_full = list(reversed(text[:paragraph_start]))
-                            # for idx, char in enumerate(reversed_prev_text_full):
-                            #     two_chars = reversed_prev_text_full[idx] + reversed_prev_text_full[idx+1] 
-                            #     if not two_chars in [" .", "\n.", "\n\n"]:
-                            #         prev_text_reversed.append(char)
-                            #     else:
-                            #         break
-                            # prev_text = "".join(reversed(prev_text_reversed))
-                            # paragraph = prev_text + paragraph
-
-                            # # Arricchimento paragraph con testo successivo fino al punto/accapo
-                            # next_text = []
-                            # next_text_full = text[paragraph_end:]
-                            # for idx, char in enumerate(next_text_full):
-                            #     try:
-                            #         two_chars = next_text_full[idx] + next_text_full[idx+1]
-                            #     except IndexError:
-                            #         two_chars = next_text_full[idx]
-                            #     if not two_chars in [". ", ".\n", "\n\n"]:
-                            #         next_text.append(char)
-                            #     else:
-                            #         break
-                            # next_text = "".join(next_text)
-                            # paragraph = paragraph + next_text + "."
                 
                 if len(paragraphs) > 1:
                     data_point = {
@@ -218,6 +186,7 @@ def process_platform_output(platform_out):
             print(f"Concept {concept_value} not found in extradata")
 
     patient_data_full = sorted(patient_data_full, key=lambda x: x["extract_start"])
+    patient_data_for_vectorstore = sorted(patient_data_for_vectorstore, key=lambda x: x["extract_start"])
     md5 = calculate_md5(text)
 
     full_processed = {

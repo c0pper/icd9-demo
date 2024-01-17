@@ -8,7 +8,6 @@ from dotenv import load_dotenv
 import requests
 from utils import get_input_context
 
-
 load_dotenv()
 
 model = "gpt-3.5-turbo-1106"
@@ -20,10 +19,15 @@ client = OpenAI(
 def ask_chatGPT_dates(text):
     system_prompt = f"""
 ### Instructions:
-Given the text provided by the user, find the medical events with reported dates and reported them in a list of events and dates. Do not make up anything. Always use "-" as a separator. 
+Given the text provided by the user, find ALL of the patient events with reported dates and reported them in a list of events and dates. Do not make up anything. Always use "-" as a separator between event and date. 
 
 ### Example:
 fili di stimolazione epicardica sono stati rimossi - 2015
+...
+"""
+    prompt = f"""
+### Text:
+f{text}
 
 ### Answer:
 """
@@ -39,7 +43,7 @@ fili di stimolazione epicardica sono stati rimossi - 2015
             },
             {
                 "role": "user",
-                "content": text,
+                "content": prompt,
             }
         ],
     )
@@ -49,7 +53,7 @@ fili di stimolazione epicardica sono stati rimossi - 2015
     full_response["status"] = True
     full_response["content"] = response_text
     full_response["source"] = "gpt-api"
-    full_response["prompt"] = text,
+    full_response["prompt"] = prompt,
     # full_response["gpt_response"] = response
 
     return full_response

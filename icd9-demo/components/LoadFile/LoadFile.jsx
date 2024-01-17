@@ -6,13 +6,22 @@ import {
 } from "@/components/ui/tooltip"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { useToast } from "@/components/ui/use-toast"
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useState } from 'react'
 import { setInputText } from '@slices/input-text/InputTextSlice'
-import { setPlatformOutput } from '@slices/platform-output/platformOutputSlice'
-import { setDateExtractionOutput } from "@slices/date-extraction-output/DateExtractionOutputSlice"
-import { setProcessedPlatformOutput } from "@slices/processed-platform-output/processedPlatformOutputSlice"
+import { 
+  setPlatformOutput, 
+  selectPlatformOutput, 
+  getPlatformOutputStatus, 
+  getPlatformOutputError, 
+  getPlatformOutput } from '@slices/platform-output/platformOutputSlice'
+import { 
+  setProcessedPlatformOutput,
+  selectProcessedPlatformOutput,
+  getProcessedPlatformOutputStatus,
+  getProcessedPlatformOutputError,
+  processPlatformOutput } from "@slices/processed-platform-output/processedPlatformOutputSlice"
+
 import dummyOutput from '../../dummy-output.json';
 import dummyOutputCristina from '../../5508 Di Nunzio Cristina.json';
 import dummyOutputFarmaci from '../../dummy-output-farmaci.json';
@@ -24,7 +33,15 @@ import axios from "axios";
 const LoadFile = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const dispatch = useDispatch()
-  const { toast } = useToast()
+
+  const platformOutput = useSelector(selectPlatformOutput)
+  const platformOutputStatus = useSelector(getPlatformOutputStatus)
+  const platformOutputError = useSelector(getPlatformOutputError)
+
+  const processedPlatformOutput = useSelector(selectPlatformOutput)
+  const processedPlatformOutputStatus = useSelector(getPlatformOutputStatus)
+  const processedPlatformOutputError = useSelector(getPlatformOutputError)
+
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
@@ -36,21 +53,36 @@ const LoadFile = () => {
       reader.onload = async () => {
         const fileContent = reader.result;
         dispatch(setInputText(fileContent))
-        toast({
-            title: "Loaded file",
-            description: file.name,
-        });
+
+        
+        try {
+          const result = await dispatch(getPlatformOutput(fileContent));
+          console.log("processing", result.payload);
+          await dispatch(processPlatformOutput(result.payload));
+        } catch (error) {
+          console.log(error);
+        }
+        
+        // await dispatch(getPlatformOutput(fileContent))
+        // console.log(platformOutput)
+        // console.log("processing", platformOutput)
+        // await dispatch(processPlatformOutput(platformOutput));
 
         // await dispatch(setPlatformOutput(dummyOutput))
         // await dispatch(setPlatformOutput(dummyOutputFarmaci))
-        await dispatch(setPlatformOutput(dummyOutputCristina))
+        // await dispatch(setPlatformOutput(dummyOutputCristina))
         
-        console.log("date", dummyDateExtractionOutput)
-        await dispatch(setDateExtractionOutput(dummyDateExtractionOutput))
+        // console.log("date", dummyDateExtractionOutput)
+        // await dispatch(setDateExtractionOutput(dummyDateExtractionOutput))
         
         // await processPlatformOutput(dummyOutput);
         // await processPlatformOutput(dummyOutputFarmaci);
-        await processPlatformOutput(dummyOutputCristina);
+        // await processPlatformOutput(dummyOutputCristina);
+
+        // if (platformOutputStatus === "succeded") {
+          // console.log("succeded", platformOutput)
+        // }
+
         // dispatch(setProcessedPlatformOutput(dummyProcessedPlatformOutput))
       };
       reader.readAsText(file);
@@ -59,23 +91,23 @@ const LoadFile = () => {
       //   dispatch(setPlatformOutput(dummyOutput))
       // }
 
-      const processPlatformOutput = async (platformOutput) => {
-        const processUrl = "http://127.0.0.1:5000/api/process_platform_output"
-        const request = {
-          "platform_out": platformOutput
-        }
-        console.log(request.platform_out)
-        try {
-          const { data } = await axios.post(
-            processUrl, 
-            request, 
-            {headers: {"Content-Type": "application/json"}}
-          )
-          dispatch(setProcessedPlatformOutput(data))
-        } catch (error) {
-          console.log(error)
-        }
-      }
+      // const processPlatformOutput = async (platformOutput) => {
+      //   const processUrl = "http://127.0.0.1:5000/api/process_platform_output"
+      //   const request = {
+      //     "platform_out": platformOutput
+      //   }
+      //   console.log(request.platform_out)
+      //   try {
+      //     const { data } = await axios.post(
+      //       processUrl, 
+      //       request, 
+      //       {headers: {"Content-Type": "application/json"}}
+      //     )
+      //     dispatch(setProcessedPlatformOutput(data))
+      //   } catch (error) {
+      //     console.log(error)
+      //   }
+      // }
 
     }
   };

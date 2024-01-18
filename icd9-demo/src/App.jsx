@@ -17,10 +17,12 @@ import {
   TabsTrigger,
 } from "@/components/ui/tabs"
 import Timeline from '@/components/Timeline/Timeline';
+import { Skeleton } from '@/components/ui/skeleton';
 
 
 function App() {
   const processedPlatformOutput = useSelector((state) => state.processedPlatformOutput.value)
+  const inputText = useSelector((state) => state.inputText.value)
 
   return (
     <>
@@ -29,6 +31,26 @@ function App() {
           <div className=' fixed bottom-4 right-4'>
             <ModeToggle />
           </div>
+
+          {/* Loading screen */}
+          {
+            inputText != null && processedPlatformOutput === null ? (
+              <div className='h-screen'>
+                <div className="grid w-full grid-cols-2 gap-4 h-[80%]">
+                  <div className=' col-span-1'>
+                    <Skeleton className="h-72 w-full m-4" />
+                    <Skeleton className="h-72 w-full m-4" />
+                  </div>
+                  <div className=' col-span-1'>
+                    <Skeleton className="h-full w-full m-4" />
+                  </div>
+                </div>
+              </div>
+            ) :
+            undefined
+          }
+
+          {/* Loaded data */}
           {
             processedPlatformOutput != null ? (
             <div>
@@ -37,7 +59,7 @@ function App() {
                   <TabsTrigger value="overview">Overview</TabsTrigger>
                   <TabsTrigger value="timeline">Timeline</TabsTrigger>
                 </TabsList>
-                
+
                 <TabsContent value="overview">
                   <div className='grid grid-cols-2 gap-4'>
                     <div className='flex-1 main-areas'>
@@ -78,6 +100,8 @@ function App() {
             </div>
             )
             :
+
+            // Input file
             <div className='flex items-center justify-center'>
               <LoadFile />
             </div>

@@ -9,11 +9,20 @@ import re
 import requests
 from dotenv import load_dotenv
 from time import sleep
+from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 load_dotenv()
 
 app = Flask(__name__)
 CORS(app)
+
+text_splitter = RecursiveCharacterTextSplitter(
+    separators= [".\n", "\n\n", ". ", "\n", " ", ""],
+    chunk_size=5000,
+    chunk_overlap=0,
+    length_function=len,
+    is_separator_regex=False,
+)
 
 
 def get_body_parts_and_instances(json_ouput):
@@ -44,8 +53,53 @@ def get_timeline_dates():
         return jsonify({"error": "Missing 'text' in the request payload"}), 400
     
     print("Getting timeline dates\n-----------------------------")
-    full_response = gpt.ask_chatGPT_dates(text)
-    response = full_response["content"]
+
+    # Splitting text and calling LLM on smaller chunks
+    splits = text_splitter.split_text(text)
+    events_with_year = []
+    events_no_year = []
+    for idx, s in enumerate(splits):
+        print(f"Asking about segment {idx+1} / {len(splits)}")
+        full_response = gpt.ask_chatGPT_dates(s)
+        response = full_response["content"]
+
+        events_list = [line.strip() for line in response.split('\n') if line.strip()]
+    
+        for event in events_list:
+            event_dict = {}
+            parts = event.split(' - ')
+            if len(parts) == 2:
+                key, date_str = parts
+                # try:
+                    # year = parser.parse(date_str).year
+                event_dict["event"] = key
+                match = re.search(r'\b\d{4}\b', date_str)
+                if match:
+                    year = match.group(0)
+                    event_dict["year"] = year
+                    events_with_year.append(event_dict)
+                else:
+                    event_dict["year"] = date_str
+                    events_no_year.append(event_dict)
+
+            else:
+                date_pattern = re.compile(r'\b\d{1,2}(\.|\/)\d{1,2}(\.|\/)(\d{2,4})\b')
+                matches = date_pattern.findall(event)
+                if matches:
+                    first_match_year = matches[0]
+                    event_dict["year"] = first_match_year
+                    event_dict["event"] = event
+                    events_with_year.append(event_dict)
+                else:
+                    event_dict["event"] = event
+                    event_dict["year"] = 'Formato non valido'
+                    events_no_year.append(event_dict)
+
+    sorted_events_with_year = sorted(events_with_year, key=lambda x: x['year'])
+
+
+
+    
     # response = """'- Ricovero del 4.09.07 al 15.09.07 per intervento chirurgico di asportazione di disco intervertebrale - Settembre 2007\n- Ricovero dal 07.01.08 al 12.01.08 presso la SOD Medicina del Dolore e Palliativa a causa di radicolopatia all\'arto inferiore destro post-laminectomia - Gennaio 2008\n- Visita presso l\'U.O. di Neurochirurgia dell\'Ospedale di Bergamo per "indispensabile intenso trattamento fisioterapico" - 15 gennaio 2008'"""
 #     response = """
 # - Ricovero del 4.09.07 al 15.09.07 per intervento chirurgico di asportazione di disco intervertebrale
@@ -53,46 +107,48 @@ def get_timeline_dates():
 # - Visita presso l'U.O. di Neurochirurgia dell'Ospedale di Bergamo il 15.01.08, con prescrizione di terapia fisioterapica
 # """
 
-    events_list = [line.strip() for line in response.split('\n') if line.strip()]
+    # full_response = gpt.ask_chatGPT_dates(text)
+    # response = full_response["content"]
+    # events_list = [line.strip() for line in response.split('\n') if line.strip()]
     
-    events_with_year = []
-    events_no_year = []
-    for event in events_list:
-        event_dict = {}
-        parts = event.split(' - ')
-        if len(parts) == 2:
-            key, date_str = parts
-            # try:
-                # year = parser.parse(date_str).year
-            event_dict["event"] = key
-            match = re.search(r'\b\d{4}\b', date_str)
-            if match:
-                year = match.group(0)
-                event_dict["year"] = year
-                events_with_year.append(event_dict)
-            else:
-                event_dict["year"] = date_str
-                events_no_year.append(event_dict)
+    # events_with_year = []
+    # events_no_year = []
+    # for event in events_list:
+    #     event_dict = {}
+    #     parts = event.split(' - ')
+    #     if len(parts) == 2:
+    #         key, date_str = parts
+    #         # try:
+    #             # year = parser.parse(date_str).year
+    #         event_dict["event"] = key
+    #         match = re.search(r'\b\d{4}\b', date_str)
+    #         if match:
+    #             year = match.group(0)
+    #             event_dict["year"] = year
+    #             events_with_year.append(event_dict)
+    #         else:
+    #             event_dict["year"] = date_str
+    #             events_no_year.append(event_dict)
 
-        else:
-            date_pattern = re.compile(r'\b\d{1,2}\.\d{1,2}\.(\d{2,4})\b')
-            matches = date_pattern.findall(event)
-            if matches:
-                first_match_year = matches[0]
-                event_dict["year"] = first_match_year
-                event_dict["event"] = event
-                events_with_year.append(event_dict)
-            else:
-                event_dict["event"] = event
-                event_dict["year"] = 'Formato non valido'
-                events_no_year.append(event_dict)
+    #     else:
+    #         date_pattern = re.compile(r'\b\d{1,2}(\.|\/)\d{1,2}(\.|\/)(\d{2,4})\b')
+    #         matches = date_pattern.findall(event)
+    #         if matches:
+    #             first_match_year = matches[0]
+    #             event_dict["year"] = first_match_year
+    #             event_dict["event"] = event
+    #             events_with_year.append(event_dict)
+    #         else:
+    #             event_dict["event"] = event
+    #             event_dict["year"] = 'Formato non valido'
+    #             events_no_year.append(event_dict)
 
-    sorted_events_with_year = sorted(events_with_year, key=lambda x: x['year'])
+    # sorted_events_with_year = sorted(events_with_year, key=lambda x: x['year'])
 
-    print(f"prompt\n{full_response['prompt']}\n")
-    print(f"repsonse\n{response}\n")
-    print(f"w/year\n{sorted_events_with_year}\n")
-    print(f"no/year\n{events_no_year}\n")
+    # print(f"prompt\n{full_response['prompt']}\n")
+    # print(f"repsonse\n{response}\n")
+    # print(f"w/year\n{sorted_events_with_year}\n")
+    # print(f"no/year\n{events_no_year}\n")
 
     return jsonify({"events_with_year": sorted_events_with_year, "events_no_year": events_no_year})
 

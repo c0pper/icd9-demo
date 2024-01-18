@@ -19,7 +19,10 @@ def enrich_paragraph_or_sentence(token, platform_out, type_of_text: str):
         prev_text_reversed = []
         reversed_prev_text_full = list(reversed(text[:paragraph_start]))
         for idx, char in enumerate(reversed_prev_text_full):
-            two_chars = reversed_prev_text_full[idx] + reversed_prev_text_full[idx+1] 
+            try:
+                two_chars = reversed_prev_text_full[idx] + reversed_prev_text_full[idx+1]
+            except IndexError:
+                two_chars = reversed_prev_text_full[idx] + " "
             if not two_chars in [" .", "\n.", "\n\n"]:
                 prev_text_reversed.append(char)
             else:
@@ -31,7 +34,10 @@ def enrich_paragraph_or_sentence(token, platform_out, type_of_text: str):
         next_text = []
         next_text_full = text[paragraph_end:]
         for idx, char in enumerate(next_text_full):
-            two_chars = next_text_full[idx] + next_text_full[idx+1]
+            try:
+                two_chars = next_text_full[idx] + next_text_full[idx+1]
+            except IndexError:
+                two_chars = next_text_full[idx] + " "
             if not two_chars in [". ", ".\n", "\n\n"]:
                 next_text.append(char)
             else:
@@ -40,6 +46,12 @@ def enrich_paragraph_or_sentence(token, platform_out, type_of_text: str):
         paragraph = paragraph + next_text + "."
 
         enriched_paragraph_start = text.find(paragraph)
+        if enriched_paragraph_start == -1:
+            enriched_paragraph_start = text.find(paragraph[:20])
+            if enriched_paragraph_start == -1:
+                enriched_paragraph_start = text.find(paragraph[:10])
+
+
         enriched_paragraph_end = enriched_paragraph_start + len(paragraph)
 
         return paragraph, enriched_paragraph_start, enriched_paragraph_end

@@ -3,11 +3,12 @@ import { useSelector } from 'react-redux'
 import { useState, useEffect } from 'react';
 import axios from 'axios'
 import { Label } from '../ui/label';
+import { Skeleton } from '../ui/skeleton';
 
 const Timeline = () => {
     
     console.log("Timeline component rendered");
-    const platformOutput = useSelector((state) => state.platformOutput.value)
+    const processedPlatformOutput = useSelector((state) => state.processedPlatformOutput.value)
     const [datedItems, setDatedItems] = useState(null)
     const [nonDatedItems, setNonDatedItems] = useState(null)
     // const datedItems = [{'event': 'intervento per cataratta bilaterale', 'year': 2005}, {'event': "intervento chirurgico di 'Endoarteriectomia polmonare bilaterale'", 'year': 2007}, {'event': "intervento chirurgico di: 'Endoarteriectomia polmonare'", 'year': 2008}, {'event': 'rimozione dei fili di stimolazione epicardica', 'year': 2015}, {'event': 'embolia polmonare acuta complicata da ematoma sottodurale cronico', 'year': 2020}, {'event': 'TC encefalo con riscontro di ematoma sottodurale cronico', 'year': 2021}, {'event': "evacuazione dell'ematoma sottodurale", 'year': 2021}, {'event': 'positività del tampone rettale per Klebsiella Pneumoniae', 'year': 2023}]
@@ -31,7 +32,7 @@ const Timeline = () => {
         try {
           const response = await axios.post(
             url, 
-            {"text": platformOutput.document.content},
+            {"text": processedPlatformOutput.text},
             {headers: {"Content-Type": "application/json"}}
           )
           const newDatedItems = response.data.events_with_year;
@@ -40,8 +41,8 @@ const Timeline = () => {
           setDatedItems(newDatedItems);
           setNonDatedItems(newNonDatedItems);
 
-          saveToLocalStorage("datedItems", newDatedItems);
-          saveToLocalStorage("nonDatedItems", newNonDatedItems);
+          saveToLocalStorage(processedPlatformOutput.md5 + "_datedItems", newDatedItems);
+          saveToLocalStorage(processedPlatformOutput.md5 + "_nonDatedItems", newNonDatedItems);
         } catch (error) {
           console.log(error)
         }
@@ -49,11 +50,11 @@ const Timeline = () => {
     
     
     useEffect(() => {
-        const cachedDatedItems = loadFromLocalStorage("datedItems");
-        const cachedNonDatedItems = loadFromLocalStorage("nonDatedItems");
+        const cachedDatedItems = loadFromLocalStorage(processedPlatformOutput.md5 + "_datedItems");
+        const cachedNonDatedItems = loadFromLocalStorage(processedPlatformOutput.md5 + "_nonDatedItems");
 
         if (cachedDatedItems && cachedNonDatedItems) {
-            console.log("loading timeline from cache")
+            console.log("loading timeline from localStorage")
             setDatedItems(cachedDatedItems);
             setNonDatedItems(cachedNonDatedItems);
         } else {
@@ -61,6 +62,7 @@ const Timeline = () => {
             // Data not found in localStorage, fetch from API
             getTimelineDates();
         }
+        console.log("nondated", nonDatedItems)
     }, []);
     
     const timelineItems = datedItems ? datedItems.map((item) => {
@@ -89,18 +91,41 @@ const Timeline = () => {
                 }}
             />)
             :
-            (
-                <p>Loading timeline...</p>
-            )
+            <div className='grid grid-cols-12 gap-4'>
+                <div className='col-span-2'>
+                    <Skeleton className="w-full h-20 m-4" />
+                    <Skeleton className="w-full h-20 m-4" />
+                </div>
+                <div className='col-span-10'>
+                    <Skeleton className="w-full h-20 m-4" />
+                    <Skeleton className="w-full h-20 m-4" />
+                </div>
+            </div>
         }
-        <Label>Events with no dates specified</Label>
+        
         {
-            nonDatedItems ? 
-            nonDatedItems.map((item, key) => (
-                <h4 key={key}>{item.event}</h4>
-            )) 
-            :
-            <p>Loading timeline...</p>
+        nonDatedItems !== undefined && nonDatedItems !== null ? 
+            <>
+                {
+                    nonDatedItems.length > 0 ? (
+                        <>
+                            <Label>Events with no dates specified</Label>
+                            {nonDatedItems.map((item, key) => (
+                                <h4 key={key}>{item.event}</h4>
+                            ))}
+                        </>
+                    ) 
+                : 
+                undefined
+                }
+            </>
+            : 
+            <div className='grid grid-cols-12 gap-4'>
+                <div className='col-span-12'>
+                    <Skeleton className="w-full h-20 m-4" />
+                    <Skeleton className="w-full h-20 m-4" />
+                </div>
+            </div>
         }
     </div>
   )

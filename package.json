@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "reactjs-human-body": "^0.0.8",
-    "redux-thunk": "^3.1.0"
-  }
-}

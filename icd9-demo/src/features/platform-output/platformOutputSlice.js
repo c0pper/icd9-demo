@@ -1,8 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import axios from "axios";
 
-const WORKFLOW_URL = "http://127.0.0.1:5000/api/get_platform_output"
-
+// const WORKFLOW_URL = "http://127.0.0.1:5000/api/get_platform_output"
+const WORKFLOW_URL = "http://127.0.0.1:5000/api/get_runner_output"
 
 const initialState = {
   value: null,
@@ -12,16 +12,24 @@ const initialState = {
 
 export const getPlatformOutput = createAsyncThunk('platformOutput/getPlatformOutput', async (text) => {
 
+  // body for platform
+  // const body = {
+  //   "body": {
+  //     "text": text,
+  //     "options":
+  //     {
+  //         "custom":
+  //         {
+  //             "normalizeToConceptId": true
+  //         }
+  //     }
+  //   }
+  // }
+
+  // body for cpk runner
   const body = {
     "body": {
-      "text": text,
-      "options":
-      {
-          "custom":
-          {
-              "normalizeToConceptId": true
-          }
-      }
+      "text": text
     }
   }
 
@@ -52,7 +60,13 @@ export const platformOutputSlice = createSlice({
       })
       .addCase(getPlatformOutput.rejected, (state, action) => {
         state.status = 'failed';
-        state.error = action.error.message;
+          // Check if the payload contains the 404 status code string
+        if (action.payload && action.payload.includes("404")) {
+          // Handle 404 error as needed
+          state.error = "Not Found";  // Set a custom error message or handle it as needed
+        } else {
+          state.error = action.payload || "Unknown error";
+        }
       });
   },
 })

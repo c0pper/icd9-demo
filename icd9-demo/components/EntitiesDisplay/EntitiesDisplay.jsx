@@ -16,8 +16,9 @@ const EntitiesDisplay = ({ processedPlatformOutput }) => {
   let procedureItems;
   if (processedPlatformOutput) {
     extractions = processedPlatformOutput.patient_data_full;
-    diagnosisItems = extractions.filter((item) => item.hierarchy.includes("ICD9CM"));
-    procedureItems = extractions.filter((item) => !item.hierarchy.includes("ICD9CM"));
+    extractions = processedPlatformOutput.collections;
+    diagnosisItems = extractions.filter((item) => item.hierarchy.startsWith("B"));
+    procedureItems = extractions.filter((item) => item.hierarchy.startsWith("A"));
   } else {
     extractions = [];
   }

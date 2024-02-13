@@ -18,10 +18,18 @@ import {
 } from "@/components/ui/tabs"
 import Timeline from '@/components/Timeline/Timeline';
 import { Skeleton } from '@/components/ui/skeleton';
+import {
+  Alert,
+  AlertDescription,
+  AlertTitle,
+} from "@/components/ui/alert"
+import { GrCircleAlert } from "react-icons/gr";
 
 
 function App() {
   const processedPlatformOutput = useSelector((state) => state.processedPlatformOutput.value)
+  const platformOutput = useSelector((state) => state.platformOutput.value)
+  const platformOutputStatus = typeof platformOutput === 'string' && platformOutput.includes("404") ? 404 : 200
   const inputText = useSelector((state) => state.inputText.value)
 
   return (
@@ -33,8 +41,7 @@ function App() {
           </div>
 
           {/* Loading screen */}
-          {
-            inputText != null && processedPlatformOutput === null ? (
+          {inputText !== null && processedPlatformOutput === null && !platformOutputStatus === 404 ? (
               <div className='h-screen'>
                 <div className="grid w-full grid-cols-2 gap-4 h-[80%]">
                   <div className=' col-span-1'>
@@ -46,9 +53,9 @@ function App() {
                   </div>
                 </div>
               </div>
-            ) :
+            ) : (
             undefined
-          }
+          )}
 
           {/* Loaded data */}
           {
@@ -100,12 +107,26 @@ function App() {
             </div>
             )
             :
-
             // Input file
             <div className='flex items-center justify-center'>
               <LoadFile />
             </div>
           }
+
+          {/* platform gives err 404 */}
+          {
+            platformOutputStatus === 404 ?
+            <Alert variant="destructive">
+              <GrCircleAlert className="h-4 w-4" />
+              <AlertTitle>Error!</AlertTitle>
+              <AlertDescription>
+                {platformOutput}
+              </AlertDescription>
+            </Alert>
+            :
+            undefined
+          }
+          
         </ThemeProvider>
       </div>
     </>

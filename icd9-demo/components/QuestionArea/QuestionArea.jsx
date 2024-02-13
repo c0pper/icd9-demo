@@ -97,7 +97,7 @@ const QuestionArea = () => {
         "extract_start": source.metadata.extract_start,
         "extract_end":source.metadata.extract_end
       }));
-      dispatch(setTextHighlighting({ start: source.metadata.extract_start, end: source.metadata.extract_end }));
+      dispatch(setTextHighlighting(Array({ start: source.metadata.extract_start, end: source.metadata.extract_end })));
   }
   
   const {

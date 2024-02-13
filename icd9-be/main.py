@@ -1,7 +1,8 @@
 from flask import Flask, request, jsonify
 import gpt
 from flask_cors import CORS
-from ingest import get_retriever, process_platform_output
+from ingest import get_retriever, process_cpk_runner_output #, process_platform_output
+from runner_client import get_essex_analysis
 import json
 from dateutil import parser
 import os
@@ -189,40 +190,47 @@ def map_body_parts_to_body():
         return jsonify({"error": e})
 
 
-@app.route('/api/get_platform_output', methods=['POST'])
-def get_platform_output():
-    request_body = request.json.get("body")
-    external_api_url = "https://playground.expertcloud.ai/api/v1/runtime/workflow/f36676cb-41a7-4789-8dac-35d5af220974/task"
-    headers = {
-        "Content-Type": "application/json",
-        "X-API-KEY": os.getenv("WORKFLOW_APIKEY")
-    }
+# @app.route('/api/get_platform_output', methods=['POST'])
+# def get_platform_output():
+#     request_body = request.json.get("body")
+#     external_api_url = "https://playground.expertcloud.ai/api/v1/runtime/workflow/f36676cb-41a7-4789-8dac-35d5af220974/task"
+#     headers = {
+#         "Content-Type": "application/json",
+#         "X-API-KEY": os.getenv("WORKFLOW_APIKEY")
+#     }
 
-    try:
-        create_job = requests.post(external_api_url, json=request_body, headers=headers)
-        create_job.raise_for_status()
-        taskId = json.loads(create_job.content)["taskId"]
+#     try:
+#         create_job = requests.post(external_api_url, json=request_body, headers=headers)
+#         create_job.raise_for_status()
+#         taskId = json.loads(create_job.content)["taskId"]
 
-        status = "SUBMITTED"
-        while status not in ["COMPLETED", "ERROR"]:
-            print(f"status {status}, sleeping and retrying for status")
-            sleep(2)
-            status_req = requests.get(f"https://playground.expertcloud.ai/api/v1/runtime/workflow/f36676cb-41a7-4789-8dac-35d5af220974/task/{taskId}/status", headers=headers)
-            status = json.loads(status_req.content)["status"]
+#         status = "SUBMITTED"
+#         while status not in ["COMPLETED", "ERROR"]:
+#             print(f"status {status}, sleeping and retrying for status")
+#             sleep(2)
+#             status_req = requests.get(f"https://playground.expertcloud.ai/api/v1/runtime/workflow/f36676cb-41a7-4789-8dac-35d5af220974/task/{taskId}/status", headers=headers)
+#             status_code = status_req.status_code
+#             if status_code == 404:
+#                 return jsonify({"error": f"Task with ID {taskId} not found"}), 404
+#             status = json.loads(status_req.content)["status"]
 
-        print(f"status {status}, proceeding")
-        response = requests.get(f"https://playground.expertcloud.ai/api/v1/runtime/workflow/f36676cb-41a7-4789-8dac-35d5af220974/task/{taskId}/response", headers=headers)
-        response = json.loads(response.content)
-        print(response)
-        return jsonify(response)
+#         print(f"status {status}, proceeding")
+#         response = requests.get(f"https://playground.expertcloud.ai/api/v1/runtime/workflow/f36676cb-41a7-4789-8dac-35d5af220974/task/{taskId}/response", headers=headers)
+#         response = json.loads(response.content)
+#         print(response)
+#         return jsonify(response)
     
-    except requests.RequestException as e:
-        return jsonify({"error": f"Failed to make the external API request: {e}"}), 500
+#     except requests.RequestException as e:
+#         error_msg = f"Failed to make the external API request: {e.response.content}"
+#         if e.response.status_code == 404:
+#             print(error_msg)
+#             return jsonify({"error": f"Failed to make the external API request: {error_msg}"}), 404
+#         else:
+#             print(error_msg)
+#             return jsonify({"error": f"Failed to make the external API request: {error_msg}"}), 500
 
-
-
-@app.route('/api/process_platform_output', methods=['POST'])
-def process_platform_output_route():
+# @app.route('/api/process_platform_output', methods=['POST'])
+# def process_platform_output_route():
     platform_out = request.json.get('platform_out')
     
     if not platform_out:
@@ -233,6 +241,27 @@ def process_platform_output_route():
     return jsonify(full_processed)
     
 
+
+@app.route('/api/get_runner_output', methods=['POST'])
+def get_runner_output():
+    print("[+] Getting runner output")
+    request_text = request.json.get("body")["text"]
+    analysis = get_essex_analysis(request_text)["result"]
+    return analysis
+
+
+
+@app.route('/api/process_runner_output', methods=['POST'])
+def process_runner_output_route():
+    print("[+] Processing runner output")
+    runner_out = request.json.get("runner_out")
+    
+    if not runner_out:
+        return jsonify({"error": "Missing 'runner_out' in the request payload"}), 400
+    
+    print("Processing runner output")
+    full_processed = process_cpk_runner_output(runner_out)
+    return jsonify(full_processed)
 
 
 @app.route('/api/ask_question', methods=['POST'])

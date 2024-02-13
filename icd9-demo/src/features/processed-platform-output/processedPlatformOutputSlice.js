@@ -1,7 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import axios from "axios";
 
-const processUrl = "http://127.0.0.1:5000/api/process_platform_output"
+// const processUrl = "http://127.0.0.1:5000/api/process_platform_output"
+const processUrl = "http://127.0.0.1:5000/api/process_runner_output"
 
 
 const initialState = {
@@ -12,8 +13,14 @@ const initialState = {
 
 
 export const processPlatformOutput = createAsyncThunk('processedPlatformOutput/getProcessedPlatformOutput', async (platformOutput) => {
+  //platform body
+  // const request = {
+  //   "platform_out": platformOutput
+  // }
+
+  //runner body
   const request = {
-    "platform_out": platformOutput
+    "runner_out": platformOutput
   }
   try {
     const response = await axios.post(

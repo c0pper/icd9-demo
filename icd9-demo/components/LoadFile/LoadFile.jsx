@@ -7,7 +7,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { useDispatch, useSelector } from 'react-redux'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { setInputText } from '@slices/input-text/InputTextSlice'
 import { 
   setPlatformOutput, 
@@ -34,7 +34,7 @@ const LoadFile = () => {
   const dispatch = useDispatch()
 
   const platformOutput = useSelector(selectPlatformOutput)
-  const platformOutputStatus = useSelector(getPlatformOutputStatus)
+  // const platformOutputStatus = useSelector(getPlatformOutputStatus)
   const platformOutputError = useSelector(getPlatformOutputError)
 
   const processedPlatformOutput = useSelector(selectPlatformOutput)
@@ -57,12 +57,18 @@ const LoadFile = () => {
         // call funzionante all'api platform
         try {
           const result = await dispatch(getPlatformOutput(fileContent));
-          console.log("processing", result.payload);
-          await dispatch(processPlatformOutput(result.payload));
+          if (typeof result.payload === 'string' && result.payload.includes("404")) {
+            console.log("is404", result.payload.includes("404"))
+          } else {
+            console.log("processing", result.payload);
+            await dispatch(processPlatformOutput(result.payload));
+          }
         } catch (error) {
           console.log(error);
         }
         
+        
+
 
         // Set platform output da locale per risparmiare tempo
 
@@ -86,33 +92,33 @@ const LoadFile = () => {
 
   return (
     <div>
-        {
-            selectedFile === null ? 
-                (
-                    <TooltipProvider>
-                        <Tooltip>
-                            <TooltipTrigger>
-                                <Button variant="outline" asChild>
-                                    <label htmlFor="fileInput" className="custom-file-input">
-                                    {selectedFile ? selectedFile.name : "Choose file"}
-                                    </label>
-                                </Button>
-                                <Input 
-                                    id="fileInput" 
-                                    type="file" 
-                                    className="hidden"
-                                    onChange={handleFileChange}
-                                />
-                            </TooltipTrigger>
-                            <TooltipContent>
-                            <p>Add to library</p>
-                            </TooltipContent>
-                        </Tooltip>
-                    </TooltipProvider>
-                )
-            :
-            undefined
-        }
+      {
+          selectedFile === null ? 
+              (
+                  <TooltipProvider>
+                      <Tooltip>
+                          <TooltipTrigger>
+                              <Button variant="outline" asChild>
+                                  <label htmlFor="fileInput" className="custom-file-input">
+                                  {selectedFile ? selectedFile.name : "Choose file"}
+                                  </label>
+                              </Button>
+                              <Input 
+                                  id="fileInput" 
+                                  type="file" 
+                                  className="hidden"
+                                  onChange={handleFileChange}
+                              />
+                          </TooltipTrigger>
+                          <TooltipContent>
+                          <p>Add to library</p>
+                          </TooltipContent>
+                      </Tooltip>
+                  </TooltipProvider>
+              )
+          :
+          undefined
+      }
     </div>
     
   )
